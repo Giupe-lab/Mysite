@@ -1,177 +1,262 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Web Developer | Siti moderni per aziende</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Web Developer | Siti che portano clienti</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0b0f17;
-      color: #ffffff;
-      line-height: 1.6;
-    }
+<style>
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial;
+  background: #f5f5f7;
+  color: #1d1d1f;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
 
-    .container {
-      max-width: 1000px;
-      margin: auto;
-      padding: 0 20px;
-    }
+/* ANIMAZIONI BASE */
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 1s ease forwards;
+}
 
-    header {
-      padding: 100px 20px;
-      text-align: center;
-      background: radial-gradient(circle at top, #1b2a4a, #0b0f17);
-    }
+.fade-up.delay-1 { animation-delay: 0.2s; }
+.fade-up.delay-2 { animation-delay: 0.4s; }
+.fade-up.delay-3 { animation-delay: 0.6s; }
 
-    header h1 {
-      font-size: 42px;
-      margin-bottom: 15px;
-    }
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
-    header p {
-      font-size: 18px;
-      color: #b9c2d0;
-      max-width: 700px;
-      margin: auto;
-    }
+.container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 0 20px;
+}
 
-    .btn {
-      display: inline-block;
-      margin-top: 25px;
-      padding: 14px 22px;
-      background: #4f7cff;
-      color: white;
-      text-decoration: none;
-      border-radius: 10px;
-      font-weight: bold;
-      transition: 0.2s;
-    }
+header {
+  padding: 120px 20px 80px;
+  text-align: center;
+  background: #ffffff;
+}
 
-    .btn:hover {
-      background: #3a66e0;
-    }
+header h1 {
+  font-size: 48px;
+  font-weight: 600;
+  letter-spacing: -1px;
+  margin-bottom: 10px;
+}
 
-    section {
-      padding: 70px 0;
-    }
+header p {
+  font-size: 20px;
+  color: #6e6e73;
+  max-width: 700px;
+  margin: auto;
+}
 
-    h2 {
-      font-size: 28px;
-      margin-bottom: 20px;
-    }
+.btn {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 14px 26px;
+  background: #0071e3;
+  color: white;
+  text-decoration: none;
+  border-radius: 980px;
+  font-weight: 500;
+  transition: 0.2s ease;
+}
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
+.btn:hover {
+  transform: scale(1.05);
+  background: #005fd1;
+}
 
-    .card {
-      background: #121a2a;
-      padding: 20px;
-      border-radius: 12px;
-    }
+section {
+  padding: 80px 0;
+}
 
-    .highlight {
-      color: #4f7cff;
-    }
+h2 {
+  font-size: 34px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 40px;
+}
 
-    .center {
-      text-align: center;
-    }
+.grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
 
-    footer {
-      text-align: center;
-      padding: 40px;
-      color: #7a8596;
-      font-size: 14px;
-    }
+.card {
+  background: white;
+  padding: 24px;
+  border-radius: 18px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+  transition: 0.3s ease;
+}
 
-    a {
-      color: #4f7cff;
-    }
-  </style>
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+}
+
+.card h3 {
+  margin-top: 0;
+}
+
+.center {
+  text-align: center;
+  color: #6e6e73;
+  max-width: 700px;
+  margin: auto;
+}
+
+/* PORTFOLIO */
+.portfolio {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.project {
+  background: white;
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+  transition: 0.3s ease;
+}
+
+.project:hover {
+  transform: scale(1.03);
+}
+
+.tag {
+  font-size: 12px;
+  background: #e8f0ff;
+  color: #0071e3;
+  padding: 5px 10px;
+  border-radius: 999px;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+footer {
+  text-align: center;
+  padding: 50px;
+  font-size: 14px;
+  color: #86868b;
+  background: #fff;
+}/* SCROLL REVEAL ANIMATION */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+</style>
 </head>
 
 <body>
 
 <header>
-  <div class="container">
-    <h1>Creo siti web <span class="highlight">moderni</span> che portano clienti</h1>
+  <div class="container fade-up">
+    <h1>Siti web che portano clienti, non solo presenza online.</h1>
     <p>
-      Aiuto piccole attività e professionisti a ottenere una presenza online
-      semplice, veloce e progettata per convertire visitatori in clienti.
+      Creo siti moderni e veloci per attività che vogliono ottenere risultati reali dal web.
     </p>
     <a class="btn" href="#contatti">Parliamo del tuo progetto</a>
   </div>
 </header>
 
-<section class="container">
-  <h2>Cosa faccio</h2>
+<section class="container fade-up delay-1">
+<h2>Cosa faccio</h2>
 
-  <div class="grid">
-    <div class="card">
-      <h3>Siti Web</h3>
-      <p>Siti veloci, responsive e ottimizzati per mobile e SEO base.</p>
-    </div>
-
-    <div class="card">
-      <h3>Landing Page</h3>
-      <p>Pagine progettate per ottenere contatti e clienti reali.</p>
-    </div>
-
-    <div class="card">
-      <h3>Restyling</h3>
-      <p>Trasformo siti vecchi in strumenti moderni e professionali.</p>
-    </div>
+<div class="grid">
+  <div class="card">
+    <h3>Siti Web Premium</h3>
+    <p>Design pulito, veloce e ottimizzato per conversioni.</p>
   </div>
-</section>
 
-<section class="container">
-  <h2>Come lavoro</h2>
-
-  <div class="grid">
-    <div class="card">
-      <h3>1. Analisi</h3>
-      <p>Capisco il tuo obiettivo e cosa vuoi ottenere online.</p>
-    </div>
-
-    <div class="card">
-      <h3>2. Sviluppo</h3>
-      <p>Creo un sito semplice, veloce e orientato ai risultati.</p>
-    </div>
-
-    <div class="card">
-      <h3>3. Pubblicazione</h3>
-      <p>Metto tutto online e ti supporto nella gestione.</p>
-    </div>
+  <div class="card">
+    <h3>Landing Page</h3>
+    <p>Pagine progettate per trasformare visitatori in clienti.</p>
   </div>
+
+  <div class="card">
+    <h3>Restyling</h3>
+    <p>Trasformo siti vecchi in strumenti moderni e performanti.</p>
+  </div>
+</div>
 </section>
 
-<section class="container center">
-  <h2>Perché scegliere me</h2>
-  <p style="max-width:700px; margin:auto; color:#b9c2d0;">
-    Non vendo solo “siti web”, ma strumenti che aiutano le attività a
-    presentarsi meglio e ottenere più contatti online.
-  </p>
+<section class="container fade-up delay-2">
+<h2>Portfolio</h2>
+
+<div class="portfolio">
+
+  <div class="project">
+    <span class="tag">Sito vetrina</span>
+    <h3>Barber Shop Milano</h3>
+    <p>Restyling completo con focus su prenotazioni e contatti rapidi.</p>
+  </div>
+
+  <div class="project">
+    <span class="tag">Landing Page</span>
+    <h3>Personal Trainer Online</h3>
+    <p>Pagina ottimizzata per acquisizione clienti da Instagram.</p>
+  </div>
+
+  <div class="project">
+    <span class="tag">Sito aziendale</span>
+    <h3>Studio Professionale</h3>
+    <p>Design minimal con focus su autorevolezza e fiducia.</p>
+  </div>
+
+</div>
 </section>
 
-<section id="contatti" class="container center">
-  <h2>Contattami</h2>
-  <p>Scrivimi per un progetto o una collaborazione</p>
+<section class="container fade-up delay-3">
+<h2>Come lavoro</h2>
 
+<div class="grid">
+  <div class="card">
+    <h3>Analisi</h3>
+    <p>Capisco il tuo business e obiettivi reali.</p>
+  </div>
+
+  <div class="card">
+    <h3>Design & Sviluppo</h3>
+    <p>Creo un sito moderno, veloce e orientato ai risultati.</p>
+  </div>
+
+  <div class="card">
+    <h3>Pubblicazione</h3>
+    <p>Metto tutto online pronto per generare contatti.</p>
+  </div>
+</div>
+</section>
+
+<section id="contatti" class="container fade-up">
+<h2>Contatti</h2>
+<p class="center">Scrivimi per collaborazioni o progetti</p>
+
+<div style="text-align:center;">
   <a class="btn" href="mailto:tuamail@email.com">Invia Email</a>
-  <p style="margin-top:15px;">
-    Oppure su 
-    <a href="#">LinkedIn</a>
-  </p>
+</div>
 </section>
 
 <footer>
-  © 2026 - Web Developer | Tutti i diritti riservati
+© 2026 Web Developer | Siti che portano risultati
 </footer>
 
 </body>
