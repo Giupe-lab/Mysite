@@ -2,73 +2,92 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Il tuo nome | Web Developer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Web Developer | Siti moderni per aziende</title>
 
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #0f0f0f;
+      background: #0b0f17;
       color: #ffffff;
       line-height: 1.6;
     }
 
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 0 20px;
+    }
+
     header {
-      padding: 80px 20px;
+      padding: 100px 20px;
       text-align: center;
-      background: #151515;
+      background: radial-gradient(circle at top, #1b2a4a, #0b0f17);
     }
 
     header h1 {
-      font-size: 40px;
-      margin-bottom: 10px;
+      font-size: 42px;
+      margin-bottom: 15px;
     }
 
     header p {
       font-size: 18px;
-      color: #b5b5b5;
+      color: #b9c2d0;
+      max-width: 700px;
+      margin: auto;
     }
 
     .btn {
       display: inline-block;
-      margin-top: 20px;
-      padding: 12px 20px;
+      margin-top: 25px;
+      padding: 14px 22px;
       background: #4f7cff;
       color: white;
       text-decoration: none;
-      border-radius: 8px;
+      border-radius: 10px;
       font-weight: bold;
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      background: #3a66e0;
     }
 
     section {
-      max-width: 900px;
-      margin: auto;
-      padding: 60px 20px;
+      padding: 70px 0;
     }
 
     h2 {
-      margin-bottom: 20px;
       font-size: 28px;
+      margin-bottom: 20px;
     }
 
-    .services {
+    .grid {
       display: grid;
-      gap: 20px;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
     }
 
     .card {
-      background: #1a1a1a;
+      background: #121a2a;
       padding: 20px;
-      border-radius: 10px;
+      border-radius: 12px;
+    }
+
+    .highlight {
+      color: #4f7cff;
+    }
+
+    .center {
+      text-align: center;
     }
 
     footer {
       text-align: center;
-      padding: 40px 20px;
-      background: #151515;
-      color: #888;
+      padding: 40px;
+      color: #7a8596;
+      font-size: 14px;
     }
 
     a {
@@ -80,54 +99,79 @@
 <body>
 
 <header>
-  <h1>Creo siti web moderni per attività e professionisti</h1>
-  <p>Ti aiuto a portare la tua attività online in modo semplice, veloce e professionale.</p>
-  <a class="btn" href="#contatti">Contattami</a>
+  <div class="container">
+    <h1>Creo siti web <span class="highlight">moderni</span> che portano clienti</h1>
+    <p>
+      Aiuto piccole attività e professionisti a ottenere una presenza online
+      semplice, veloce e progettata per convertire visitatori in clienti.
+    </p>
+    <a class="btn" href="#contatti">Parliamo del tuo progetto</a>
+  </div>
 </header>
 
-<section>
+<section class="container">
   <h2>Cosa faccio</h2>
 
-  <div class="services">
+  <div class="grid">
     <div class="card">
       <h3>Siti Web</h3>
-      <p>Siti semplici, veloci e ottimizzati per mobile.</p>
+      <p>Siti veloci, responsive e ottimizzati per mobile e SEO base.</p>
     </div>
 
     <div class="card">
       <h3>Landing Page</h3>
-      <p>Pagine per promuovere servizi o attività e ottenere clienti.</p>
+      <p>Pagine progettate per ottenere contatti e clienti reali.</p>
     </div>
 
     <div class="card">
       <h3>Restyling</h3>
-      <p>Rifaccio siti vecchi rendendoli moderni e più efficaci.</p>
+      <p>Trasformo siti vecchi in strumenti moderni e professionali.</p>
     </div>
   </div>
 </section>
 
-<section>
+<section class="container">
   <h2>Come lavoro</h2>
-  <p>
-    1. Parliamo del tuo progetto<br>
-    2. Creo il sito su misura per te<br>
-    3. Lo mettiamo online e sei operativo
+
+  <div class="grid">
+    <div class="card">
+      <h3>1. Analisi</h3>
+      <p>Capisco il tuo obiettivo e cosa vuoi ottenere online.</p>
+    </div>
+
+    <div class="card">
+      <h3>2. Sviluppo</h3>
+      <p>Creo un sito semplice, veloce e orientato ai risultati.</p>
+    </div>
+
+    <div class="card">
+      <h3>3. Pubblicazione</h3>
+      <p>Metto tutto online e ti supporto nella gestione.</p>
+    </div>
+  </div>
+</section>
+
+<section class="container center">
+  <h2>Perché scegliere me</h2>
+  <p style="max-width:700px; margin:auto; color:#b9c2d0;">
+    Non vendo solo “siti web”, ma strumenti che aiutano le attività a
+    presentarsi meglio e ottenere più contatti online.
   </p>
 </section>
 
-<section id="contatti">
-  <h2>Contatti</h2>
-  <p>Scrivimi per un preventivo o una collaborazione:</p>
-  <p>
-    Email: <a href="mailto:tuamail@email.com">tuamail@email.com</a><br>
-    LinkedIn: <a href="#">Il tuo profilo</a>
-  </p>
+<section id="contatti" class="container center">
+  <h2>Contattami</h2>
+  <p>Scrivimi per un progetto o una collaborazione</p>
 
-  <a class="btn" href="mailto:tuamail@email.com">Scrivimi ora</a>
+  <a class="btn" href="mailto:tuamail@email.com">Invia Email</a>
+  <p style="margin-top:15px;">
+    Oppure su 
+    <a href="#">LinkedIn</a>
+  </p>
 </section>
 
 <footer>
-  © 2026 - Il tuo nome | Web Developer
+  © 2026 - Web Developer | Tutti i diritti riservati
 </footer>
 
 </body>
