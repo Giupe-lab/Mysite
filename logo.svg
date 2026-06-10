@@ -1,0 +1,30 @@
+<svg width="520" height="140" viewBox="0 0 520 140" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1">
+      <stop offset="0%" stop-color="#6C7CFF"/>
+      <stop offset="100%" stop-color="#2EE9A6"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3.5" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Icon -->
+  <g transform="translate(20,20)">
+    <path d="M40 0 L80 40 L40 80 L0 40 Z" fill="none" stroke="url(#g)" stroke-width="6" filter="url(#glow)"/>
+    <circle cx="40" cy="40" r="10" fill="url(#g)"/>
+  </g>
+
+  <!-- Text -->
+  <text x="120" y="78" font-family="Inter, Arial" font-size="48" fill="url(#g)" font-weight="700" letter-spacing="4">
+    NEXORA
+  </text>
+
+  <text x="122" y="110" font-family="Inter, Arial" font-size="14" fill="#AAB4D6" letter-spacing="3">
+    DIGITAL STUDIO
+  </text>
+</svg>
