@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NEXORA Studio | Digital Products & AI</title>
+<title>NEXORA Studio</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
@@ -11,186 +11,165 @@
 :root{
   --bg:#05070F;
   --card:rgba(255,255,255,0.04);
-  --stroke:rgba(255,255,255,0.1);
+  --stroke:rgba(255,255,255,0.08);
   --text:#EAF0FF;
   --muted:rgba(234,240,255,0.65);
   --a:#6C7CFF;
   --b:#2EE9A6;
 }
 
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:Inter;
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Inter;}
 
 body{
   background:radial-gradient(circle at top,#0B1020,var(--bg));
   color:var(--text);
-  overflow-x:hidden;
 }
 
-/* LIGHT GLOW BACKGROUND */
-body::before{
-  content:"";
-  position:fixed;
-  width:600px;
-  height:600px;
-  background:radial-gradient(circle, rgba(108,124,255,0.15), transparent 60%);
-  top:-200px;
-  left:50%;
-  transform:translateX(-50%);
-  z-index:-1;
-}
-
-/* NAV */
+/* NAV CLEAN */
 nav{
   position:fixed;
   width:100%;
   top:0;
-  padding:16px 10%;
+  padding:12px 8%;
   display:flex;
   justify-content:space-between;
   align-items:center;
-  backdrop-filter:blur(18px);
+  backdrop-filter:blur(16px);
   background:rgba(0,0,0,0.35);
   border-bottom:1px solid var(--stroke);
   z-index:1000;
 }
 
-.logo-wrap svg{
-  transition:0.4s cubic-bezier(.2,.8,.2,1);
-}
-
-.logo-wrap:hover svg{
-  transform:scale(1.06);
-  filter:drop-shadow(0 0 18px rgba(108,124,255,0.4))
-         drop-shadow(0 0 30px rgba(46,233,166,0.2));
-}
-
 nav a{
   color:var(--muted);
-  margin-left:16px;
   text-decoration:none;
   font-size:13px;
+  margin-left:18px;
+  transition:0.2s;
 }
 
 nav a:hover{color:white}
 
-/* HERO */
+/* LOGO */
+.logo-wrap svg{
+  transition:0.35s ease;
+}
+
+.logo-wrap:hover svg{
+  transform:scale(1.04);
+  filter:drop-shadow(0 0 16px rgba(108,124,255,0.3));
+}
+
+/* HERO COMPACT */
 .hero{
-  padding:170px 10% 80px;
+  padding:130px 8% 50px;
   text-align:center;
 }
 
 .hero h1{
-  font-size:56px;
+  font-size:44px;
+  line-height:1.1;
   background:linear-gradient(90deg,var(--a),var(--b));
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
-  line-height:1.05;
 }
 
 .hero p{
-  margin-top:18px;
+  margin-top:14px;
   color:var(--muted);
-  max-width:750px;
-  margin-left:auto;
-  margin-right:auto;
-  font-size:18px;
+  max-width:650px;
+  margin:auto;
+  font-size:16px;
 }
 
+/* BUTTON */
 .btn{
-  margin-top:25px;
+  margin-top:20px;
   display:inline-block;
-  padding:12px 22px;
-  border-radius:12px;
+  padding:10px 18px;
+  border-radius:10px;
+  background:linear-gradient(90deg,var(--a),var(--b));
+  color:#000;
   text-decoration:none;
   font-weight:500;
   transition:0.3s;
 }
 
-.primary{
-  background:linear-gradient(90deg,var(--a),var(--b));
-  color:#000;
-}
-
-.primary:hover{
-  transform:scale(1.05);
-}
+.btn:hover{transform:scale(1.04)}
 
 /* SECTIONS */
 .section{
-  padding:90px 10%;
+  padding:60px 8%;
 }
 
 .title{
   text-align:center;
-  font-size:32px;
-  margin-bottom:40px;
+  font-size:26px;
+  margin-bottom:30px;
 }
 
 /* GRID */
 .grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:20px;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:16px;
 }
 
-/* CARDS PREMIUM */
+/* CARD PREMIUM MINIMAL */
 .card{
   background:var(--card);
   border:1px solid var(--stroke);
-  padding:24px;
-  border-radius:18px;
-  transition:0.35s;
-  backdrop-filter:blur(10px);
+  padding:20px;
+  border-radius:14px;
+  transition:0.3s;
 }
 
 .card:hover{
-  transform:translateY(-10px);
-  border-color:rgba(108,124,255,0.4);
-  box-shadow:0 25px 60px rgba(0,0,0,0.5);
+  transform:translateY(-6px);
+  border-color:rgba(108,124,255,0.35);
 }
 
 .card p{
+  margin-top:6px;
+  font-size:13px;
   color:var(--muted);
-  margin-top:8px;
-  font-size:14px;
+}
+
+/* PROCESS */
+.step{
+  text-align:center;
 }
 
 /* RESULTS */
-.results{
+.stats{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-  gap:20px;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:14px;
 }
 
 .stat{
   text-align:center;
-  padding:20px;
+  padding:18px;
+  border-radius:14px;
   border:1px solid var(--stroke);
-  border-radius:16px;
   background:rgba(255,255,255,0.03);
 }
 
 .stat h2{
   color:var(--b);
-  font-size:28px;
 }
 
 /* CTA */
 .cta{
   text-align:center;
-  padding:100px 10%;
-  background:linear-gradient(90deg,rgba(108,124,255,0.12),rgba(46,233,166,0.12));
+  padding:80px 8%;
+  background:rgba(255,255,255,0.03);
   border-top:1px solid var(--stroke);
 }
 
 footer{
   text-align:center;
-  padding:30px;
+  padding:20px;
   font-size:12px;
   color:var(--muted);
 }
@@ -202,8 +181,7 @@ footer{
 <!-- NAV -->
 <nav>
   <a href="#" class="logo-wrap">
-
-    <svg width="220" height="60" viewBox="0 0 520 140" xmlns="http://www.w3.org/2000/svg">
+    <svg width="190" height="55" viewBox="0 0 520 140" xmlns="http://www.w3.org/2000/svg">
       <defs>
         <linearGradient id="g" x1="0" x2="1">
           <stop offset="0%" stop-color="#6C7CFF"/>
@@ -220,29 +198,23 @@ footer{
         <circle cx="40" cy="40" r="6" fill="url(#g)"/>
       </g>
 
-      <text x="130" y="75" font-size="46" font-weight="700" fill="url(#g)">
-        NEXORA
-      </text>
-
-      <text x="132" y="105" font-size="13" fill="rgba(255,255,255,0.6)">
-        DIGITAL STUDIO
-      </text>
+      <text x="130" y="75" font-size="44" font-weight="700" fill="url(#g)">NEXORA</text>
+      <text x="132" y="102" font-size="12" fill="rgba(255,255,255,0.55)">DIGITAL STUDIO</text>
     </svg>
-
   </a>
 
   <div>
     <a href="#servizi">Servizi</a>
-    <a href="#portfolio">Case Study</a>
+    <a href="#portfolio">Lavori</a>
     <a href="#contatto">Contatto</a>
   </div>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
-  <h1>Trasformiamo siti web in macchine che generano clienti</h1>
-  <p>Progettiamo siti, landing page e sistemi AI che aumentano conversioni e fatturato reale.</p>
-  <a class="btn primary" href="#contatto">Richiedi analisi gratuita</a>
+  <h1>Costruiamo siti e prodotti digitali che aiutano le aziende a crescere</h1>
+  <p>Design, sviluppo e automazioni AI pensati per migliorare esperienza e conversioni.</p>
+  <a class="btn" href="#contatto">Parliamone</a>
 </section>
 
 <!-- SERVIZI -->
@@ -251,39 +223,61 @@ footer{
 
   <div class="grid">
     <div class="card">
-      <h3>Web Design</h3>
-      <p>Siti moderni, veloci e ottimizzati per SEO e conversioni.</p>
+      <h3>Siti Web</h3>
+      <p>Strutture moderne, veloci e curate nel dettaglio.</p>
     </div>
 
     <div class="card">
       <h3>Landing Page</h3>
-      <p>Strutturate per trasformare traffico in clienti reali.</p>
+      <p>Pensate per comunicare meglio e generare contatti.</p>
     </div>
 
     <div class="card">
-      <h3>AI Automation</h3>
-      <p>Chatbot e automazioni per scalare il business.</p>
+      <h3>AI & Automazioni</h3>
+      <p>Sistemi per semplificare processi e attività ripetitive.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESSO -->
+<section class="section">
+  <div class="title">Come lavoriamo</div>
+
+  <div class="grid">
+    <div class="card step">
+      <h3>Analisi</h3>
+      <p>Capire obiettivi e contesto del progetto.</p>
+    </div>
+
+    <div class="card step">
+      <h3>Design</h3>
+      <p>Struttura chiara e orientata all’esperienza utente.</p>
+    </div>
+
+    <div class="card step">
+      <h3>Sviluppo</h3>
+      <p>Implementazione pulita, veloce e scalabile.</p>
     </div>
   </div>
 </section>
 
 <!-- RESULTS -->
 <section class="section">
-  <div class="title">Risultati</div>
+  <div class="title">Impatto</div>
 
-  <div class="results">
+  <div class="stats">
     <div class="stat">
       <h2>+40%</h2>
       <p>Conversioni medie</p>
     </div>
 
     <div class="stat">
-      <h2>-35%</h2>
+      <h2>-30%</h2>
       <p>Bounce rate</p>
     </div>
 
     <div class="stat">
-      <h2>2-5x</h2>
+      <h2>2x</h2>
       <p>Lead generati</p>
     </div>
   </div>
@@ -291,36 +285,36 @@ footer{
 
 <!-- PORTFOLIO -->
 <section id="portfolio" class="section">
-  <div class="title">Case Study</div>
+  <div class="title">Lavori</div>
 
   <div class="grid">
     <div class="card">
       <h3>VelvetSkin</h3>
-      <p>+27% conversioni dopo redesign UX.</p>
+      <p>Miglioramento conversioni e UX ecommerce.</p>
     </div>
 
     <div class="card">
       <h3>TaskFlow AI</h3>
-      <p>+1200 utenti in 30 giorni.</p>
+      <p>Landing per prodotto SaaS in fase early-stage.</p>
     </div>
 
     <div class="card">
       <h3>Rinaldi Coaching</h3>
-      <p>Lead generation triplicata.</p>
+      <p>Sito e funnel per acquisizione contatti.</p>
     </div>
   </div>
 </section>
 
 <!-- CTA -->
 <section id="contatto" class="cta">
-  <h2>Vuoi migliorare il tuo business online?</h2>
-  <p>Richiedi un’analisi gratuita del tuo sito.</p>
+  <h2>Se hai un progetto, possiamo parlarne</h2>
+  <p>Ti rispondiamo con calma e valutiamo insieme la soluzione migliore.</p>
   <br>
-  <a class="btn primary" href="mailto:tuamail@email.com">Contattami</a>
+  <a class="btn" href="mailto:tuamail@email.com">Contatta</a>
 </section>
 
 <footer>
-  © 2026 NEXORA Studio — All rights reserved
+  © 2026 NEXORA Studio
 </footer>
 
 </body>
