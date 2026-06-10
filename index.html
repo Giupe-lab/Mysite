@@ -23,6 +23,7 @@
 body{
   background:radial-gradient(circle at top,#0B1020,var(--bg));
   color:var(--text);
+  overflow-x:hidden;
 }
 
 /* NAV CLEAN */
@@ -44,31 +45,31 @@ nav a{
   color:var(--muted);
   text-decoration:none;
   font-size:13px;
-  margin-left:18px;
-  transition:0.2s;
+  margin-left:16px;
 }
 
 nav a:hover{color:white}
 
 /* LOGO */
-.logo-wrap svg{
-  transition:0.35s ease;
+.logo img{
+  height:42px;
+  transition:0.3s;
 }
 
-.logo-wrap:hover svg{
-  transform:scale(1.04);
-  filter:drop-shadow(0 0 16px rgba(108,124,255,0.3));
+.logo:hover img{
+  transform:scale(1.05);
+  filter:drop-shadow(0 0 18px rgba(108,124,255,0.3));
 }
 
 /* HERO COMPACT */
 .hero{
-  padding:130px 8% 50px;
+  padding:140px 8% 60px;
   text-align:center;
 }
 
 .hero h1{
-  font-size:44px;
-  line-height:1.1;
+  font-size:46px;
+  line-height:1.05;
   background:linear-gradient(90deg,var(--a),var(--b));
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
@@ -82,11 +83,10 @@ nav a:hover{color:white}
   font-size:16px;
 }
 
-/* BUTTON */
 .btn{
-  margin-top:20px;
+  margin-top:22px;
   display:inline-block;
-  padding:10px 18px;
+  padding:11px 18px;
   border-radius:10px;
   background:linear-gradient(90deg,var(--a),var(--b));
   color:#000;
@@ -95,17 +95,18 @@ nav a:hover{color:white}
   transition:0.3s;
 }
 
-.btn:hover{transform:scale(1.04)}
+.btn:hover{transform:scale(1.05)}
 
 /* SECTIONS */
 .section{
-  padding:60px 8%;
+  padding:70px 8%;
 }
 
+/* TITLES */
 .title{
   text-align:center;
   font-size:26px;
-  margin-bottom:30px;
+  margin-bottom:28px;
 }
 
 /* GRID */
@@ -115,18 +116,25 @@ nav a:hover{color:white}
   gap:16px;
 }
 
-/* CARD PREMIUM MINIMAL */
+/* CARDS */
 .card{
   background:var(--card);
   border:1px solid var(--stroke);
   padding:20px;
   border-radius:14px;
-  transition:0.3s;
+  transition:0.4s;
+  opacity:0;
+  transform:translateY(20px);
+}
+
+.card.show{
+  opacity:1;
+  transform:translateY(0);
 }
 
 .card:hover{
   transform:translateY(-6px);
-  border-color:rgba(108,124,255,0.35);
+  border-color:rgba(108,124,255,0.4);
 }
 
 .card p{
@@ -135,12 +143,7 @@ nav a:hover{color:white}
   color:var(--muted);
 }
 
-/* PROCESS */
-.step{
-  text-align:center;
-}
-
-/* RESULTS */
+/* STATS */
 .stats{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
@@ -153,6 +156,13 @@ nav a:hover{color:white}
   border-radius:14px;
   border:1px solid var(--stroke);
   background:rgba(255,255,255,0.03);
+  opacity:0;
+  transform:translateY(20px);
+}
+
+.stat.show{
+  opacity:1;
+  transform:translateY(0);
 }
 
 .stat h2{
@@ -167,11 +177,16 @@ nav a:hover{color:white}
   border-top:1px solid var(--stroke);
 }
 
-footer{
-  text-align:center;
-  padding:20px;
-  font-size:12px;
-  color:var(--muted);
+/* ANIMATION BASE */
+.reveal{
+  opacity:0;
+  transform:translateY(25px);
+  transition:0.7s ease;
+}
+
+.reveal.active{
+  opacity:1;
+  transform:translateY(0);
 }
 </style>
 </head>
@@ -180,27 +195,9 @@ footer{
 
 <!-- NAV -->
 <nav>
-  <a href="#" class="logo-wrap">
-    <svg width="190" height="55" viewBox="0 0 520 140" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <linearGradient id="g" x1="0" x2="1">
-          <stop offset="0%" stop-color="#6C7CFF"/>
-          <stop offset="100%" stop-color="#2EE9A6"/>
-        </linearGradient>
-      </defs>
 
-      <g transform="translate(20,20)">
-        <path d="M40 5 L75 40 L40 75 L5 40 Z"
-          fill="none"
-          stroke="url(#g)"
-          stroke-width="5"
-          stroke-linejoin="round"/>
-        <circle cx="40" cy="40" r="6" fill="url(#g)"/>
-      </g>
-
-      <text x="130" y="75" font-size="44" font-weight="700" fill="url(#g)">NEXORA</text>
-      <text x="132" y="102" font-size="12" fill="rgba(255,255,255,0.55)">DIGITAL STUDIO</text>
-    </svg>
+  <a href="#" class="logo">
+    <img src="logo.svg" alt="NEXORA">
   </a>
 
   <div>
@@ -208,114 +205,99 @@ footer{
     <a href="#portfolio">Lavori</a>
     <a href="#contatto">Contatto</a>
   </div>
+
 </nav>
 
 <!-- HERO -->
-<section class="hero">
-  <h1>Costruiamo siti e prodotti digitali che aiutano le aziende a crescere</h1>
-  <p>Design, sviluppo e automazioni AI pensati per migliorare esperienza e conversioni.</p>
-  <a class="btn" href="#contatto">Parliamone</a>
+<section class="hero reveal">
+  <h1>Siti web e prodotti digitali che generano risultati reali</h1>
+  <p>Progettiamo esperienze digitali pensate per migliorare conversioni, comunicazione e crescita.</p>
+  <a class="btn" href="#contatto">Parliamo del tuo progetto</a>
 </section>
 
 <!-- SERVIZI -->
-<section id="servizi" class="section">
+<section id="servizi" class="section reveal">
   <div class="title">Servizi</div>
 
   <div class="grid">
     <div class="card">
       <h3>Siti Web</h3>
-      <p>Strutture moderne, veloci e curate nel dettaglio.</p>
+      <p>Design moderno e ottimizzato per performance.</p>
     </div>
 
     <div class="card">
       <h3>Landing Page</h3>
-      <p>Pensate per comunicare meglio e generare contatti.</p>
+      <p>Strutture pensate per aumentare conversioni.</p>
     </div>
 
     <div class="card">
-      <h3>AI & Automazioni</h3>
-      <p>Sistemi per semplificare processi e attività ripetitive.</p>
+      <h3>AI Tools</h3>
+      <p>Automazioni e sistemi intelligenti per business.</p>
     </div>
   </div>
 </section>
 
-<!-- PROCESSO -->
-<section class="section">
-  <div class="title">Come lavoriamo</div>
-
-  <div class="grid">
-    <div class="card step">
-      <h3>Analisi</h3>
-      <p>Capire obiettivi e contesto del progetto.</p>
-    </div>
-
-    <div class="card step">
-      <h3>Design</h3>
-      <p>Struttura chiara e orientata all’esperienza utente.</p>
-    </div>
-
-    <div class="card step">
-      <h3>Sviluppo</h3>
-      <p>Implementazione pulita, veloce e scalabile.</p>
-    </div>
-  </div>
-</section>
-
-<!-- RESULTS -->
-<section class="section">
+<!-- STATS -->
+<section class="section reveal">
   <div class="title">Impatto</div>
 
   <div class="stats">
-    <div class="stat">
-      <h2>+40%</h2>
-      <p>Conversioni medie</p>
-    </div>
-
-    <div class="stat">
-      <h2>-30%</h2>
-      <p>Bounce rate</p>
-    </div>
-
-    <div class="stat">
-      <h2>2x</h2>
-      <p>Lead generati</p>
-    </div>
+    <div class="stat"> <h2>+40%</h2> <p>Conversioni</p> </div>
+    <div class="stat"> <h2>-30%</h2> <p>Bounce rate</p> </div>
+    <div class="stat"> <h2>2x</h2> <p>Lead generati</p> </div>
   </div>
 </section>
 
 <!-- PORTFOLIO -->
-<section id="portfolio" class="section">
+<section id="portfolio" class="section reveal">
   <div class="title">Lavori</div>
 
   <div class="grid">
     <div class="card">
       <h3>VelvetSkin</h3>
-      <p>Miglioramento conversioni e UX ecommerce.</p>
+      <p>Ottimizzazione UX e aumento conversioni ecommerce.</p>
     </div>
 
     <div class="card">
       <h3>TaskFlow AI</h3>
-      <p>Landing per prodotto SaaS in fase early-stage.</p>
+      <p>Landing SaaS per crescita utenti iniziali.</p>
     </div>
 
     <div class="card">
       <h3>Rinaldi Coaching</h3>
-      <p>Sito e funnel per acquisizione contatti.</p>
+      <p>Funnel per acquisizione clienti online.</p>
     </div>
   </div>
 </section>
 
 <!-- CTA -->
-<section id="contatto" class="cta">
-  <h2>Se hai un progetto, possiamo parlarne</h2>
-  <p>Ti rispondiamo con calma e valutiamo insieme la soluzione migliore.</p>
+<section id="contatto" class="cta reveal">
+  <h2>Hai un progetto in mente?</h2>
+  <p>Scrivici e valutiamo insieme la soluzione migliore.</p>
   <br>
   <a class="btn" href="mailto:tuamail@email.com">Contatta</a>
 </section>
 
-<footer>
+<!-- FOOTER -->
+<footer style="text-align:center;padding:20px;color:rgba(255,255,255,0.5);font-size:12px;">
   © 2026 NEXORA Studio
 </footer>
+
+<script>
+// SCROLL ANIMATION
+const elements = document.querySelectorAll('.reveal, .card, .stat');
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('active');
+      entry.target.classList.add('show');
+    }
+  });
+}, {threshold:0.1});
+
+elements.forEach(el => observer.observe(el));
+</script>
 
 </body>
 </html>
