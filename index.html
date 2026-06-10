@@ -26,7 +26,7 @@ body{
   overflow-x:hidden;
 }
 
-/* NAV CLEAN */
+/* NAV */
 nav{
   position:fixed;
   width:100%;
@@ -35,7 +35,7 @@ nav{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  backdrop-filter:blur(16px);
+  backdrop-filter:blur(18px);
   background:rgba(0,0,0,0.35);
   border-bottom:1px solid var(--stroke);
   z-index:1000;
@@ -46,44 +46,51 @@ nav a{
   text-decoration:none;
   font-size:13px;
   margin-left:16px;
+  transition:0.2s;
 }
 
 nav a:hover{color:white}
 
 /* LOGO */
 .logo img{
-  height:42px;
+  height:40px;
   transition:0.3s;
 }
-
 .logo:hover img{
   transform:scale(1.05);
   filter:drop-shadow(0 0 18px rgba(108,124,255,0.3));
 }
 
-/* HERO COMPACT */
+/* HERO */
 .hero{
-  padding:140px 8% 60px;
+  padding:150px 8% 50px;
   text-align:center;
 }
 
 .hero h1{
-  font-size:42px;
-  line-height:1.15;
-  max-width:750px;
+  font-size:44px;
+  line-height:1.1;
+  max-width:800px;
   margin:0 auto;
   background:linear-gradient(90deg,var(--a),var(--b));
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
-}
 }
 
 .hero p{
   margin-top:14px;
   color:var(--muted);
   max-width:650px;
-  margin:auto;
+  margin-left:auto;
+  margin-right:auto;
   font-size:16px;
+}
+
+.micro{
+  margin-top:14px;
+  font-size:12px;
+  letter-spacing:1px;
+  color:rgba(255,255,255,0.4);
 }
 
 .btn{
@@ -97,19 +104,17 @@ nav a:hover{color:white}
   font-weight:500;
   transition:0.3s;
 }
-
 .btn:hover{transform:scale(1.05)}
 
 /* SECTIONS */
 .section{
-  padding:70px 8%;
+  padding:65px 8%;
 }
 
-/* TITLES */
 .title{
   text-align:center;
-  font-size:26px;
-  margin-bottom:28px;
+  font-size:24px;
+  margin-bottom:25px;
 }
 
 /* GRID */
@@ -123,21 +128,14 @@ nav a:hover{color:white}
 .card{
   background:var(--card);
   border:1px solid var(--stroke);
-  padding:20px;
+  padding:18px;
   border-radius:14px;
   transition:0.4s;
-  opacity:0;
-  transform:translateY(20px);
-}
-
-.card.show{
-  opacity:1;
-  transform:translateY(0);
 }
 
 .card:hover{
   transform:translateY(-6px);
-  border-color:rgba(108,124,255,0.4);
+  border-color:rgba(108,124,255,0.35);
 }
 
 .card p{
@@ -159,13 +157,6 @@ nav a:hover{color:white}
   border-radius:14px;
   border:1px solid var(--stroke);
   background:rgba(255,255,255,0.03);
-  opacity:0;
-  transform:translateY(20px);
-}
-
-.stat.show{
-  opacity:1;
-  transform:translateY(0);
 }
 
 .stat h2{
@@ -180,16 +171,30 @@ nav a:hover{color:white}
   border-top:1px solid var(--stroke);
 }
 
-/* ANIMATION BASE */
-.reveal{
-  opacity:0;
-  transform:translateY(25px);
-  transition:0.7s ease;
+form{
+  max-width:450px;
+  margin:20px auto 0;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
 }
 
-.reveal.active{
-  opacity:1;
-  transform:translateY(0);
+input,textarea{
+  padding:10px;
+  border-radius:10px;
+  border:1px solid rgba(255,255,255,0.1);
+  background:rgba(255,255,255,0.03);
+  color:white;
+  font-size:13px;
+}
+
+textarea{height:90px}
+
+footer{
+  text-align:center;
+  padding:20px;
+  font-size:12px;
+  color:rgba(255,255,255,0.4);
 }
 </style>
 </head>
@@ -198,76 +203,76 @@ nav a:hover{color:white}
 
 <!-- NAV -->
 <nav>
-
   <a href="#" class="logo">
     <img src="logo.svg" alt="NEXORA">
   </a>
 
   <div>
     <a href="#servizi">Servizi</a>
-    <a href="#portfolio">Lavori</a>
+    <a href="#lavori">Lavori</a>
     <a href="#contatto">Contatto</a>
   </div>
-
 </nav>
 
 <!-- HERO -->
-<section class="hero reveal">
- <section class="hero reveal">
-  <h1>Costruiamo prodotti digitali chiari e funzionali</h1>
+<section class="hero">
+  <h1>Costruiamo prodotti digitali semplici, veloci e ben progettati</h1>
 
-  <p>Design e sviluppo orientati alla semplicità e all’efficacia.</p>
+  <p>Un piccolo studio focalizzato su design, sviluppo e automazioni essenziali.</p>
 
-  <a class="btn" href="#contatto">Parliamo</a>
-</section> 
+  <a class="btn" href="#contatto">Richiedi una breve analisi</a>
+
+  <div class="micro">
+    Design minimal • Performance • Cura del dettaglio
+  </div>
 </section>
 
 <!-- SERVIZI -->
-<section id="servizi" class="section reveal">
+<section id="servizi" class="section">
   <div class="title">Servizi</div>
 
   <div class="grid">
     <div class="card">
       <h3>Siti Web</h3>
-      <p>Design moderno e ottimizzato per performance.</p>
+      <p>Strutture leggere e ottimizzate per chiarezza e velocità.</p>
     </div>
 
     <div class="card">
       <h3>Landing Page</h3>
-      <p>Strutture pensate per aumentare conversioni.</p>
+      <p>Progettate per comunicare meglio e ridurre attrito.</p>
     </div>
 
     <div class="card">
-      <h3>AI Tools</h3>
-      <p>Automazioni e sistemi intelligenti per business.</p>
+      <h3>Automazioni AI</h3>
+      <p>Sistemi semplici per migliorare processi e gestione.</p>
     </div>
   </div>
 </section>
 
-<!-- STATS -->
-<section class="section reveal">
+<!-- IMPATTO -->
+<section class="section">
   <div class="title">Impatto</div>
 
   <div class="stats">
-    <div class="stat"> <h2>+40%</h2> <p>Conversioni</p> </div>
-    <div class="stat"> <h2>-30%</h2> <p>Bounce rate</p> </div>
-    <div class="stat"> <h2>2x</h2> <p>Lead generati</p> </div>
+    <div class="stat"><h2>+40%</h2><p>Conversioni</p></div>
+    <div class="stat"><h2>-30%</h2><p>Bounce rate</p></div>
+    <div class="stat"><h2>2x</h2><p>Lead</p></div>
   </div>
 </section>
 
-<!-- PORTFOLIO -->
-<section id="portfolio" class="section reveal">
+<!-- LAVORI -->
+<section id="lavori" class="section">
   <div class="title">Lavori</div>
 
   <div class="grid">
     <div class="card">
       <h3>VelvetSkin</h3>
-      <p>Ottimizzazione UX e aumento conversioni ecommerce.</p>
+      <p>Ottimizzazione UX e miglioramento conversioni.</p>
     </div>
 
     <div class="card">
       <h3>TaskFlow AI</h3>
-      <p>Landing SaaS per crescita utenti iniziali.</p>
+      <p>Landing per prodotto SaaS early-stage.</p>
     </div>
 
     <div class="card">
@@ -277,49 +282,22 @@ nav a:hover{color:white}
   </div>
 </section>
 
-<!-- CTA -->
-<section id="contatto" class="cta reveal">
-  <h2>Vuoi migliorare il tuo sito?</h2>
-  <p>Riceverai una breve analisi con consigli pratici e chiari.</p>
+<!-- CONTATTO -->
+<section id="contatto" class="cta">
+  <h2>Parliamo del tuo progetto</h2>
+  <p>Se ha senso collaborare, te lo diciamo in modo diretto.</p>
 
-  <br>
-
-  <form style="max-width:500px;margin:auto;display:flex;flex-direction:column;gap:10px;">
-
-    <input type="text" placeholder="Nome"
-      style="padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.03);color:white;">
-
-    <input type="email" placeholder="Email"
-      style="padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.03);color:white;">
-
-    <textarea placeholder="Di cosa hai bisogno?"
-      style="padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.03);color:white;height:100px;"></textarea>
-
-    <button type="button" class="btn">Invia richiesta</button>
-
+  <form>
+    <input type="text" placeholder="Nome">
+    <input type="email" placeholder="Email">
+    <textarea placeholder="Di cosa hai bisogno?"></textarea>
+    <button class="btn" type="button">Invia richiesta</button>
   </form>
 </section>
 
-<!-- FOOTER -->
-<footer style="text-align:center;padding:20px;color:rgba(255,255,255,0.5);font-size:12px;">
+<footer>
   © 2026 NEXORA Studio
 </footer>
-
-<script>
-// SCROLL ANIMATION
-const elements = document.querySelectorAll('.reveal, .card, .stat');
-
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if(entry.isIntersecting){
-      entry.target.classList.add('active');
-      entry.target.classList.add('show');
-    }
-  });
-}, {threshold:0.1});
-
-elements.forEach(el => observer.observe(el));
-</script>
 
 </body>
 </html>
