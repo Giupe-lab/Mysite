@@ -3,239 +3,344 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Web Developer | Siti che generano clienti</title>
+<title>Digital Studio | Web & AI Solutions</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial;
-  background: #f5f5f7;
-  color: #1d1d1f;
-  overflow-x: hidden;
+:root{
+  --bg:#070A12;
+  --card:rgba(255,255,255,0.06);
+  --stroke:rgba(255,255,255,0.12);
+  --text:#E6EAF2;
+  --muted:rgba(230,234,242,0.7);
+  --accent:#4F8CFF;
+  --accent2:#22D3EE;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Inter, sans-serif;
+}
+
+body{
+  background: radial-gradient(circle at top, #0B1220, var(--bg));
+  color:var(--text);
+  overflow-x:hidden;
+}
+
+/* NAV */
+nav{
+  position:fixed;
+  top:0;
+  width:100%;
+  padding:18px 10%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  backdrop-filter: blur(14px);
+  background:rgba(0,0,0,0.3);
+  border-bottom:1px solid var(--stroke);
+  z-index:1000;
+}
+
+nav h1{
+  font-size:16px;
+  letter-spacing:1px;
+}
+
+nav a{
+  color:var(--muted);
+  margin-left:20px;
+  text-decoration:none;
+  font-size:14px;
+  transition:0.3s;
+}
+
+nav a:hover{
+  color:white;
 }
 
 /* HERO */
-header {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  position: relative;
-  background: linear-gradient(180deg, #ffffff, #f5f5f7);
-  overflow: hidden;
+.hero{
+  padding:140px 10% 100px;
+  text-align:center;
+  position:relative;
 }
 
-.parallax {
-  position: absolute;
-  width: 120%;
-  height: 120%;
-  background: radial-gradient(circle at center, rgba(0,113,227,0.18), transparent 60%);
-  z-index: 0;
+.hero h2{
+  font-size:52px;
+  line-height:1.1;
+  margin-bottom:20px;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
 }
 
-/* HERO TEXT */
-.hero {
-  position: relative;
-  z-index: 1;
-  max-width: 850px;
-  padding: 20px;
+.hero p{
+  max-width:720px;
+  margin:0 auto;
+  color:var(--muted);
+  font-size:18px;
 }
 
-.hero h1 {
-  font-size: 56px;
-  letter-spacing: -1px;
-  margin-bottom: 10px;
+.buttons{
+  margin-top:30px;
 }
 
-.hero p {
-  font-size: 20px;
-  color: #6e6e73;
+.btn{
+  display:inline-block;
+  padding:12px 22px;
+  border-radius:10px;
+  margin:5px;
+  font-weight:500;
+  transition:0.3s;
+  text-decoration:none;
 }
 
-/* TYPEWRITER */
-.typing {
-  color: #0071e3;
-  border-right: 2px solid #0071e3;
-  white-space: nowrap;
-  overflow: hidden;
-  display: inline-block;
+.primary{
+  background:linear-gradient(90deg, var(--accent), var(--accent2));
+  color:#000;
 }
 
-/* BUTTON */
-.btn {
-  display: inline-block;
-  margin-top: 30px;
-  padding: 14px 26px;
-  background: #0071e3;
-  color: white;
-  text-decoration: none;
-  border-radius: 999px;
-  transition: 0.25s ease;
+.primary:hover{
+  transform:scale(1.05);
 }
 
-.btn:hover {
-  transform: scale(1.08);
-  background: #005fd1;
+.secondary{
+  border:1px solid var(--stroke);
+  color:white;
+}
+
+.secondary:hover{
+  background:rgba(255,255,255,0.06);
 }
 
 /* SECTIONS */
-section {
-  max-width: 1000px;
-  margin: auto;
-  padding: 110px 20px;
+section{
+  padding:80px 10%;
 }
 
-/* REVEAL */
-.reveal {
-  opacity: 0;
-  transform: translateY(50px);
-  transition: all 0.9s ease;
+.title{
+  text-align:center;
+  font-size:34px;
+  margin-bottom:50px;
 }
 
-.reveal.active {
-  opacity: 1;
-  transform: translateY(0);
+/* GRID */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(260px,1fr));
+  gap:20px;
 }
 
-/* STAGGER CARDS */
-.grid {
-  display: grid;
-  gap: 20px;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+/* CARD */
+.card{
+  background:var(--card);
+  border:1px solid var(--stroke);
+  padding:25px;
+  border-radius:16px;
+  backdrop-filter: blur(10px);
+  transition:0.4s;
+  transform:translateY(20px);
+  opacity:0;
 }
 
-.card {
-  background: white;
-  padding: 26px;
-  border-radius: 22px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-  transition: 0.3s ease;
+.card.show{
+  transform:translateY(0);
+  opacity:1;
 }
 
-.card:hover {
-  transform: translateY(-10px) scale(1.02);
+.card:hover{
+  transform:translateY(-8px) scale(1.02);
+  border-color:rgba(255,255,255,0.25);
 }
 
-h2 {
-  text-align: center;
-  font-size: 38px;
+.card h3{
+  margin-bottom:10px;
 }
 
-.sub {
-  text-align: center;
-  color: #6e6e73;
-  max-width: 750px;
-  margin: 10px auto 50px;
+.card p{
+  color:var(--muted);
+  font-size:14px;
 }
 
 /* CTA */
-.cta {
-  text-align: center;
+.cta{
+  text-align:center;
+  padding:100px 10%;
+  background:linear-gradient(90deg, rgba(79,140,255,0.15), rgba(34,211,238,0.15));
+  border-top:1px solid var(--stroke);
+  border-bottom:1px solid var(--stroke);
 }
 
-footer {
-  text-align: center;
-  padding: 50px;
-  font-size: 14px;
-  color: #86868b;
-  background: #fff;
+.cta h2{
+  font-size:34px;
+  margin-bottom:10px;
+}
+
+.cta p{
+  color:var(--muted);
+}
+
+/* FORM */
+form{
+  max-width:500px;
+  margin:30px auto 0;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+input, textarea{
+  padding:12px;
+  border-radius:10px;
+  border:1px solid var(--stroke);
+  background:rgba(255,255,255,0.03);
+  color:white;
+  outline:none;
+}
+
+textarea{
+  min-height:120px;
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:30px;
+  font-size:12px;
+  color:var(--muted);
+}
+
+/* FLOAT EFFECT */
+.glow{
+  position:absolute;
+  width:300px;
+  height:300px;
+  background:var(--accent);
+  filter:blur(120px);
+  opacity:0.15;
+  top:50px;
+  left:50%;
+  transform:translateX(-50%);
+  z-index:-1;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  .hero h2{font-size:34px;}
+  nav a{display:none;}
 }
 </style>
 </head>
 
 <body>
 
-<header>
-  <div class="parallax" id="parallax"></div>
-
-  <div class="hero">
-    <h1>
-      Creo siti web che <span class="typing" id="typing"></span>
-    </h1>
-    <p>Siti moderni, veloci e progettati per trasformare visitatori in clienti reali.</p>
-    <a class="btn" href="#contatti">Parliamo del tuo progetto</a>
+<nav>
+  <h1>Digital Studio</h1>
+  <div>
+    <a href="#servizi">Servizi</a>
+    <a href="#metodo">Metodo</a>
+    <a href="#contatto">Contatto</a>
   </div>
-</header>
+</nav>
 
-<section class="reveal">
-<h2>Cosa faccio</h2>
-<p class="sub">Creo siti web per aziende, professionisti e attività locali.</p>
+<div class="hero">
+  <div class="glow"></div>
+  <h2>Siti Web & AI che fanno crescere il tuo business</h2>
+  <p>Creo esperienze digitali moderne, landing page ad alta conversione e automazioni AI per portare il tuo progetto al livello successivo.</p>
 
-<div class="grid">
-  <div class="card">Siti Aziendali</div>
-  <div class="card">Attività Locali</div>
-  <div class="card">Landing Page</div>
+  <div class="buttons">
+    <a href="#contatto" class="btn primary">Richiedi un progetto</a>
+    <a href="#servizi" class="btn secondary">Scopri di più</a>
+  </div>
 </div>
+
+<section id="servizi">
+  <div class="title">Servizi</div>
+
+  <div class="grid">
+    <div class="card">
+      <h3>🌐 Siti Web Premium</h3>
+      <p>Design moderni, veloci e ottimizzati per conversioni e SEO.</p>
+    </div>
+
+    <div class="card">
+      <h3>🚀 Landing Page</h3>
+      <p>Pagine strategiche progettate per trasformare traffico in clienti.</p>
+    </div>
+
+    <div class="card">
+      <h3>🤖 AI Automation</h3>
+      <p>Chatbot, automazioni e strumenti intelligenti per il tuo business.</p>
+    </div>
+  </div>
 </section>
 
-<section class="reveal">
-<h2>Approccio</h2>
-<p class="sub">
-Non creo siti vetrina. Creo strumenti digitali che generano contatti reali.
-</p>
+<section id="metodo">
+  <div class="title">Come lavoro</div>
+
+  <div class="grid">
+    <div class="card">
+      <h3>1. Analisi</h3>
+      <p>Studio il tuo progetto e definisco strategia e obiettivi.</p>
+    </div>
+
+    <div class="card">
+      <h3>2. Design</h3>
+      <p>Creo un’interfaccia moderna focalizzata sull’utente.</p>
+    </div>
+
+    <div class="card">
+      <h3>3. Sviluppo</h3>
+      <p>Trasformo tutto in un sito veloce, responsive e scalabile.</p>
+    </div>
+  </div>
 </section>
 
-<section class="reveal cta" id="contatti">
-<h2>Contattami</h2>
-<p class="sub">Scrivimi per un progetto o collaborazione</p>
-<a class="btn" href="mailto:tuamail@email.com">Invia Email</a>
+<section id="contatto" class="cta">
+  <h2>Hai un progetto in mente?</h2>
+  <p>Scrivimi e lo realizziamo insieme.</p>
+
+  <form>
+    <input type="text" placeholder="Nome">
+    <input type="email" placeholder="Email">
+    <textarea placeholder="Descrivi il tuo progetto"></textarea>
+    <a href="mailto:tuamail@email.com" class="btn primary">Invia richiesta</a>
+  </form>
 </section>
 
 <footer>
-© 2026 Web Developer
+  © 2026 Digital Studio — Tutti i diritti riservati
 </footer>
 
 <script>
-/* PARALLAX */
-window.addEventListener('scroll', () => {
-  const p = document.getElementById('parallax');
-  let y = window.scrollY * 0.3;
-  p.style.transform = `translateY(${y}px)`;
-});
+// Scroll animation
+const cards = document.querySelectorAll('.card');
 
-/* REVEAL */
-const reveals = document.querySelectorAll('.reveal');
-
-function reveal() {
-  const h = window.innerHeight;
-
-  reveals.forEach(el => {
-    const top = el.getBoundingClientRect().top;
-    if (top < h - 100) {
-      el.classList.add('active');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('show');
     }
   });
-}
+}, {threshold:0.2});
 
-window.addEventListener('scroll', reveal);
-window.addEventListener('load', reveal);
+cards.forEach(card => observer.observe(card));
 
-/* TYPEWRITER */
-const text = ["portano clienti", "convertono visite", "fanno crescere business"];
-let i = 0;
-let j = 0;
-let current = "";
-let deleting = false;
-
-function type() {
-  current = text[i];
-
-  if (!deleting) {
-    document.getElementById("typing").textContent = current.substring(0, j++);
-    if (j > current.length + 5) deleting = true;
-  } else {
-    document.getElementById("typing").textContent = current.substring(0, j--);
-    if (j < 0) {
-      deleting = false;
-      i = (i + 1) % text.length;
-    }
-  }
-
-  setTimeout(type, deleting ? 60 : 90);
-}
-
-type();
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener("click", e=>{
+    e.preventDefault();
+    document.querySelector(a.getAttribute("href")).scrollIntoView({
+      behavior:"smooth"
+    });
+  });
+});
 </script>
 
 </body>
