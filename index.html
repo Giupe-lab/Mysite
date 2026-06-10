@@ -1,113 +1,104 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Digital Studio | Web & AI Solutions</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NEXORA Studio | Digital Products & AI Systems</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 :root{
-  --bg:#070A12;
-  --card:rgba(255,255,255,0.06);
-  --stroke:rgba(255,255,255,0.12);
-  --text:#E6EAF2;
-  --muted:rgba(230,234,242,0.7);
-  --accent:#4F8CFF;
-  --accent2:#22D3EE;
+  --bg:#05070F;
+  --card:rgba(255,255,255,0.05);
+  --stroke:rgba(255,255,255,0.1);
+  --text:#EAF0FF;
+  --muted:rgba(234,240,255,0.65);
+  --a:#6C7CFF;
+  --b:#2EE9A6;
 }
 
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:Inter, sans-serif;
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Inter;}
 
 body{
-  background: radial-gradient(circle at top, #0B1220, var(--bg));
+  background:radial-gradient(circle at top,#0B1020,var(--bg));
   color:var(--text);
-  overflow-x:hidden;
 }
 
 /* NAV */
 nav{
   position:fixed;
-  top:0;
   width:100%;
-  padding:18px 10%;
+  top:0;
+  padding:16px 10%;
   display:flex;
   justify-content:space-between;
   align-items:center;
-  backdrop-filter: blur(14px);
-  background:rgba(0,0,0,0.3);
+  backdrop-filter:blur(18px);
+  background:rgba(0,0,0,0.35);
   border-bottom:1px solid var(--stroke);
-  z-index:1000;
 }
 
 nav h1{
-  font-size:16px;
-  letter-spacing:1px;
+  font-size:13px;
+  letter-spacing:3px;
 }
 
 nav a{
   color:var(--muted);
-  margin-left:20px;
+  margin-left:16px;
   text-decoration:none;
-  font-size:14px;
-  transition:0.3s;
+  font-size:13px;
 }
 
-nav a:hover{
-  color:white;
-}
+nav a:hover{color:white}
 
 /* HERO */
 .hero{
-  padding:140px 10% 100px;
+  padding:150px 10% 80px;
   text-align:center;
-  position:relative;
+}
+
+.glow{
+  position:absolute;
+  width:450px;
+  height:450px;
+  background:var(--a);
+  filter:blur(150px);
+  opacity:0.12;
+  left:50%;
+  transform:translateX(-50%);
+  top:80px;
+  z-index:-1;
 }
 
 .hero h2{
-  font-size:52px;
-  line-height:1.1;
-  margin-bottom:20px;
-  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  font-size:58px;
+  background:linear-gradient(90deg,var(--a),var(--b));
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
 }
 
 .hero p{
   max-width:720px;
-  margin:0 auto;
+  margin:20px auto;
   color:var(--muted);
   font-size:18px;
 }
 
-.buttons{
-  margin-top:30px;
-}
+.btns{margin-top:25px}
 
 .btn{
-  display:inline-block;
-  padding:12px 22px;
+  padding:12px 20px;
   border-radius:10px;
   margin:5px;
-  font-weight:500;
-  transition:0.3s;
+  display:inline-block;
   text-decoration:none;
 }
 
 .primary{
-  background:linear-gradient(90deg, var(--accent), var(--accent2));
+  background:linear-gradient(90deg,var(--a),var(--b));
   color:#000;
-}
-
-.primary:hover{
-  transform:scale(1.05);
 }
 
 .secondary{
@@ -115,125 +106,48 @@ nav a:hover{
   color:white;
 }
 
-.secondary:hover{
-  background:rgba(255,255,255,0.06);
-}
-
-/* SECTIONS */
-section{
+/* GRID */
+.section{
   padding:80px 10%;
 }
 
 .title{
   text-align:center;
-  font-size:34px;
-  margin-bottom:50px;
+  font-size:32px;
+  margin-bottom:40px;
 }
 
-/* GRID */
 .grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit, minmax(260px,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
   gap:20px;
 }
 
-/* CARD */
 .card{
   background:var(--card);
   border:1px solid var(--stroke);
-  padding:25px;
+  padding:24px;
   border-radius:16px;
-  backdrop-filter: blur(10px);
-  transition:0.4s;
-  transform:translateY(20px);
-  opacity:0;
-}
-
-.card.show{
-  transform:translateY(0);
-  opacity:1;
-}
-
-.card:hover{
-  transform:translateY(-8px) scale(1.02);
-  border-color:rgba(255,255,255,0.25);
-}
-
-.card h3{
-  margin-bottom:10px;
 }
 
 .card p{
   color:var(--muted);
+  margin-top:8px;
   font-size:14px;
 }
 
 /* CTA */
 .cta{
   text-align:center;
-  padding:100px 10%;
-  background:linear-gradient(90deg, rgba(79,140,255,0.15), rgba(34,211,238,0.15));
-  border-top:1px solid var(--stroke);
-  border-bottom:1px solid var(--stroke);
+  padding:90px 10%;
+  background:linear-gradient(90deg,rgba(108,124,255,0.12),rgba(46,233,166,0.12));
 }
 
-.cta h2{
-  font-size:34px;
-  margin-bottom:10px;
-}
-
-.cta p{
-  color:var(--muted);
-}
-
-/* FORM */
-form{
-  max-width:500px;
-  margin:30px auto 0;
-  display:flex;
-  flex-direction:column;
-  gap:10px;
-}
-
-input, textarea{
-  padding:12px;
-  border-radius:10px;
-  border:1px solid var(--stroke);
-  background:rgba(255,255,255,0.03);
-  color:white;
-  outline:none;
-}
-
-textarea{
-  min-height:120px;
-}
-
-/* FOOTER */
 footer{
   text-align:center;
   padding:30px;
   font-size:12px;
   color:var(--muted);
-}
-
-/* FLOAT EFFECT */
-.glow{
-  position:absolute;
-  width:300px;
-  height:300px;
-  background:var(--accent);
-  filter:blur(120px);
-  opacity:0.15;
-  top:50px;
-  left:50%;
-  transform:translateX(-50%);
-  z-index:-1;
-}
-
-/* MOBILE */
-@media(max-width:768px){
-  .hero h2{font-size:34px;}
-  nav a{display:none;}
 }
 </style>
 </head>
@@ -241,107 +155,77 @@ footer{
 <body>
 
 <nav>
-  <h1>Digital Studio</h1>
+  <h1>NEXORA STUDIO</h1>
   <div>
     <a href="#servizi">Servizi</a>
-    <a href="#metodo">Metodo</a>
+    <a href="#approccio">Approccio</a>
     <a href="#contatto">Contatto</a>
   </div>
 </nav>
 
 <div class="hero">
   <div class="glow"></div>
-  <h2>Siti Web & AI che fanno crescere il tuo business</h2>
-  <p>Creo esperienze digitali moderne, landing page ad alta conversione e automazioni AI per portare il tuo progetto al livello successivo.</p>
+  <h2>Costruiamo prodotti digitali che generano clienti.</h2>
+  <p>Siti web, landing page e sistemi AI progettati per trasformare traffico in crescita reale e misurabile.</p>
 
-  <div class="buttons">
-    <a href="#contatto" class="btn primary">Richiedi un progetto</a>
-    <a href="#servizi" class="btn secondary">Scopri di più</a>
+  <div class="btns">
+    <a class="btn primary" href="#contatto">Inizia un progetto</a>
+    <a class="btn secondary" href="#servizi">Esplora servizi</a>
   </div>
 </div>
 
-<section id="servizi">
+<section id="servizi" class="section">
   <div class="title">Servizi</div>
 
   <div class="grid">
     <div class="card">
-      <h3>🌐 Siti Web Premium</h3>
-      <p>Design moderni, veloci e ottimizzati per conversioni e SEO.</p>
+      <h3>Web Presence</h3>
+      <p>Siti moderni, veloci e ottimizzati SEO.</p>
     </div>
 
     <div class="card">
-      <h3>🚀 Landing Page</h3>
-      <p>Pagine strategiche progettate per trasformare traffico in clienti.</p>
+      <h3>Conversion Systems</h3>
+      <p>Landing page progettate per vendere.</p>
     </div>
 
     <div class="card">
-      <h3>🤖 AI Automation</h3>
-      <p>Chatbot, automazioni e strumenti intelligenti per il tuo business.</p>
+      <h3>AI Automation</h3>
+      <p>Chatbot e sistemi intelligenti per business.</p>
     </div>
   </div>
 </section>
 
-<section id="metodo">
-  <div class="title">Come lavoro</div>
+<section id="approccio" class="section">
+  <div class="title">Approccio</div>
 
   <div class="grid">
     <div class="card">
-      <h3>1. Analisi</h3>
-      <p>Studio il tuo progetto e definisco strategia e obiettivi.</p>
+      <h3>Strategia</h3>
+      <p>Analisi del mercato e obiettivi reali.</p>
     </div>
 
     <div class="card">
-      <h3>2. Design</h3>
-      <p>Creo un’interfaccia moderna focalizzata sull’utente.</p>
+      <h3>Design</h3>
+      <p>UI moderna orientata alla conversione.</p>
     </div>
 
     <div class="card">
-      <h3>3. Sviluppo</h3>
-      <p>Trasformo tutto in un sito veloce, responsive e scalabile.</p>
+      <h3>Sviluppo</h3>
+      <p>Performance, SEO e scalabilità.</p>
     </div>
   </div>
 </section>
 
 <section id="contatto" class="cta">
-  <h2>Hai un progetto in mente?</h2>
-  <p>Scrivimi e lo realizziamo insieme.</p>
-
-  <form>
-    <input type="text" placeholder="Nome">
-    <input type="email" placeholder="Email">
-    <textarea placeholder="Descrivi il tuo progetto"></textarea>
-    <a href="mailto:tuamail@email.com" class="btn primary">Invia richiesta</a>
-  </form>
+  <h2>Pronto a costruire qualcosa di serio?</h2>
+  <p>Scrivimi e iniziamo il tuo progetto digitale.</p>
+  <br>
+  <a class="btn primary" href="mailto:tuamail@email.com">Contattami</a>
 </section>
 
 <footer>
-  © 2026 Digital Studio — Tutti i diritti riservati
+  © 2026 NEXORA Studio — Digital Products & AI Systems
 </footer>
-
-<script>
-// Scroll animation
-const cards = document.querySelectorAll('.card');
-
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if(entry.isIntersecting){
-      entry.target.classList.add('show');
-    }
-  });
-}, {threshold:0.2});
-
-cards.forEach(card => observer.observe(card));
-
-// Smooth scroll
-document.querySelectorAll('a[href^="#"]').forEach(a=>{
-  a.addEventListener("click", e=>{
-    e.preventDefault();
-    document.querySelector(a.getAttribute("href")).scrollIntoView({
-      behavior:"smooth"
-    });
-  });
-});
-</script>
 
 </body>
 </html>
