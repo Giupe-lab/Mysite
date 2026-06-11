@@ -164,6 +164,47 @@ footer{
   font-size:12px;
   color:rgba(255,255,255,0.5);
 }
+@media (max-width: 768px){
+
+  .hero h1{
+    font-size:28px;
+    padding:0 10px;
+  }
+
+  .hero p{
+    font-size:14px;
+    padding:0 10px;
+  }
+
+  nav{
+    flex-direction:column;
+    gap:10px;
+    padding:12px 5%;
+  }
+
+  .nav-links{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+    justify-content:center;
+  }
+
+  .section{
+    padding:50px 5%;
+  }
+
+  .card{
+    padding:14px;
+  }
+
+  form{
+    width:100%;
+  }
+
+  input,textarea{
+    font-size:14px;
+  }
+}
 </style>
 </head>
 
@@ -235,21 +276,22 @@ footer{
 
 </div>
 </section>
-
-<!-- CONTATTO -->
 <section id="contatto" class="cta">
   <h2>Parliamo del tuo progetto</h2>
-  <p>Ti rispondiamo entro 24 ore con una prima analisi.</p>
+  <p>Ti rispondiamo entro 24 ore.</p>
 
   <form action="https://formspree.io/f/xnjybgwk" method="POST">
+
     <input type="text" name="name" placeholder="Nome" required>
+
     <input type="email" name="email" placeholder="Email" required>
+
     <textarea name="message" placeholder="Di cosa hai bisogno?" required></textarea>
 
     <button class="btn" type="submit">Invia richiesta</button>
+
   </form>
 </section>
-
 <!-- FOOTER -->
 <footer>
   <p>NEXORA Studio</p>
