@@ -17,7 +17,22 @@
   --a:#6C7CFF;
   --b:#2EE9A6;
 }
+.nav-links{
+  display:flex;
+  gap:18px;
+  align-items:center;
+}
 
+.nav-links a{
+  color:var(--muted);
+  text-decoration:none;
+  font-size:13px;
+  transition:0.2s;
+}
+
+.nav-links a:hover{
+  color:white;
+}
 *{margin:0;padding:0;box-sizing:border-box;font-family:Inter;}
 
 body{
@@ -160,20 +175,22 @@ footer{
     <img src="logo.svg" alt="NEXORA">
   </a>
 
-  <div>
-    <a href="#servizi">Servizi</a>
-    <a href="#lavori">Lavori</a>
-    <a href="#contatto">Contatto</a>
-  </div>
+<div class="nav-links">
+  <a href="#servizi">Servizi</a>
+  <a href="#lavori">Lavori</a>
+  <a href="#contatto">Contatto</a>
+</div>
 </nav>
 
 <!-- HERO -->
-<section class="hero">
-  <h1>Costruiamo siti web, landing page e sistemi digitali per aziende e professionisti</h1>
+<section class="section">
+  <div class="title">Chi siamo</div>
 
-  <p>Aiutiamo attività a migliorare la loro presenza online con soluzioni semplici, veloci e funzionali.</p>
-
-  <a class="btn" href="#contatto">Richiedi una consulenza</a>
+  <div class="card">
+    <p>
+      NEXORA è uno studio indipendente che progetta siti web, landing page e soluzioni digitali con un approccio essenziale.
+    </p>
+  </div>
 </section>
 
 <!-- SERVIZI -->
@@ -199,25 +216,24 @@ footer{
 </section>
 
 <!-- LAVORI -->
-<section id="lavori" class="section">
-  <div class="title">Lavori</div>
+<div class="grid">
 
-  <div class="grid">
-    <div class="card">
-      <h3>VelvetSkin</h3>
-      <p>Restyling e miglioramento esperienza utente ecommerce.</p>
-    </div>
-
-    <div class="card">
-      <h3>TaskFlow AI</h3>
-      <p>Landing per prodotto digitale SaaS.</p>
-    </div>
-
-    <div class="card">
-      <h3>Rinaldi Coaching</h3>
-      <p>Sistema di acquisizione clienti online.</p>
-    </div>
+  <div class="card">
+    <h3>VelvetSkin</h3>
+    <p>Restyling completo del sito e miglioramento UX per ecommerce beauty.</p>
   </div>
+
+  <div class="card">
+    <h3>TaskFlow AI</h3>
+    <p>Landing page per presentazione prodotto SaaS in fase early-stage.</p>
+  </div>
+
+  <div class="card">
+    <h3>Rinaldi Coaching</h3>
+    <p>Struttura per acquisizione contatti e gestione clienti online.</p>
+  </div>
+
+</div>
 </section>
 
 <!-- CONTATTO -->
