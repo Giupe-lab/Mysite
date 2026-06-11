@@ -46,7 +46,6 @@ nav a{
   text-decoration:none;
   font-size:13px;
   margin-left:16px;
-  transition:0.2s;
 }
 
 nav a:hover{color:white}
@@ -54,11 +53,6 @@ nav a:hover{color:white}
 /* LOGO */
 .logo img{
   height:40px;
-  transition:0.3s;
-}
-.logo:hover img{
-  transform:scale(1.05);
-  filter:drop-shadow(0 0 18px rgba(108,124,255,0.3));
 }
 
 /* HERO */
@@ -86,13 +80,6 @@ nav a:hover{color:white}
   font-size:16px;
 }
 
-.micro{
-  margin-top:14px;
-  font-size:12px;
-  letter-spacing:1px;
-  color:rgba(255,255,255,0.4);
-}
-
 .btn{
   margin-top:22px;
   display:inline-block;
@@ -102,9 +89,7 @@ nav a:hover{color:white}
   color:#000;
   text-decoration:none;
   font-weight:500;
-  transition:0.3s;
 }
-.btn:hover{transform:scale(1.05)}
 
 /* SECTIONS */
 .section{
@@ -124,43 +109,12 @@ nav a:hover{color:white}
   gap:16px;
 }
 
-/* CARDS */
+/* CARD */
 .card{
   background:var(--card);
   border:1px solid var(--stroke);
   padding:18px;
   border-radius:14px;
-  transition:0.4s;
-}
-
-.card:hover{
-  transform:translateY(-6px);
-  border-color:rgba(108,124,255,0.35);
-}
-
-.card p{
-  margin-top:6px;
-  font-size:13px;
-  color:var(--muted);
-}
-
-/* STATS */
-.stats{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-  gap:14px;
-}
-
-.stat{
-  text-align:center;
-  padding:18px;
-  border-radius:14px;
-  border:1px solid var(--stroke);
-  background:rgba(255,255,255,0.03);
-}
-
-.stat h2{
-  color:var(--b);
 }
 
 /* CTA */
@@ -185,16 +139,15 @@ input,textarea{
   border:1px solid rgba(255,255,255,0.1);
   background:rgba(255,255,255,0.03);
   color:white;
-  font-size:13px;
 }
 
 textarea{height:90px}
 
 footer{
   text-align:center;
-  padding:20px;
+  padding:25px;
   font-size:12px;
-  color:rgba(255,255,255,0.4);
+  color:rgba(255,255,255,0.5);
 }
 </style>
 </head>
@@ -216,15 +169,11 @@ footer{
 
 <!-- HERO -->
 <section class="hero">
-  <h1>Costruiamo prodotti digitali semplici, veloci e ben progettati</h1>
+  <h1>Costruiamo siti web, landing page e sistemi digitali per aziende e professionisti</h1>
 
-  <p>Un piccolo studio focalizzato su design, sviluppo e automazioni essenziali.</p>
+  <p>Aiutiamo attività a migliorare la loro presenza online con soluzioni semplici, veloci e funzionali.</p>
 
-  <a class="btn" href="#contatto">Richiedi una breve analisi</a>
-
-  <div class="micro">
-    Design minimal • Performance • Cura del dettaglio
-  </div>
+  <a class="btn" href="#contatto">Richiedi una consulenza</a>
 </section>
 
 <!-- SERVIZI -->
@@ -234,29 +183,18 @@ footer{
   <div class="grid">
     <div class="card">
       <h3>Siti Web</h3>
-      <p>Strutture leggere e ottimizzate per chiarezza e velocità.</p>
+      <p>Strutture moderne e ottimizzate per conversioni.</p>
     </div>
 
     <div class="card">
       <h3>Landing Page</h3>
-      <p>Progettate per comunicare meglio e ridurre attrito.</p>
+      <p>Progettate per acquisire contatti e clienti.</p>
     </div>
 
     <div class="card">
       <h3>Automazioni AI</h3>
-      <p>Sistemi semplici per migliorare processi e gestione.</p>
+      <p>Sistemi per semplificare processi e lavoro.</p>
     </div>
-  </div>
-</section>
-
-<!-- IMPATTO -->
-<section class="section">
-  <div class="title">Impatto</div>
-
-  <div class="stats">
-    <div class="stat"><h2>+40%</h2><p>Conversioni</p></div>
-    <div class="stat"><h2>-30%</h2><p>Bounce rate</p></div>
-    <div class="stat"><h2>2x</h2><p>Lead</p></div>
   </div>
 </section>
 
@@ -267,17 +205,17 @@ footer{
   <div class="grid">
     <div class="card">
       <h3>VelvetSkin</h3>
-      <p>Ottimizzazione UX e miglioramento conversioni.</p>
+      <p>Restyling e miglioramento esperienza utente ecommerce.</p>
     </div>
 
     <div class="card">
       <h3>TaskFlow AI</h3>
-      <p>Landing per prodotto SaaS early-stage.</p>
+      <p>Landing per prodotto digitale SaaS.</p>
     </div>
 
     <div class="card">
       <h3>Rinaldi Coaching</h3>
-      <p>Funnel per acquisizione clienti online.</p>
+      <p>Sistema di acquisizione clienti online.</p>
     </div>
   </div>
 </section>
@@ -285,18 +223,23 @@ footer{
 <!-- CONTATTO -->
 <section id="contatto" class="cta">
   <h2>Parliamo del tuo progetto</h2>
-  <p>Se ha senso collaborare, te lo diciamo in modo diretto.</p>
+  <p>Ti rispondiamo entro 24 ore con una prima analisi.</p>
 
-  <form>
-    <input type="text" placeholder="Nome">
-    <input type="email" placeholder="Email">
-    <textarea placeholder="Di cosa hai bisogno?"></textarea>
-    <button class="btn" type="button">Invia richiesta</button>
+  <form action="https://formspree.io/f/xnjybgwk" method="POST">
+    <input type="text" name="name" placeholder="Nome" required>
+    <input type="email" name="email" placeholder="Email" required>
+    <textarea name="message" placeholder="Di cosa hai bisogno?" required></textarea>
+
+    <button class="btn" type="submit">Invia richiesta</button>
   </form>
 </section>
 
+<!-- FOOTER -->
 <footer>
-  © 2026 NEXORA Studio
+  <p>NEXORA Studio</p>
+  <p>📧 storeproductdigital@gmail.com</p>
+  <p>Instagram: @nexora_digitalstudio</p>
+  <p>© 2026 NEXORA Studio</p>
 </footer>
 
 </body>
