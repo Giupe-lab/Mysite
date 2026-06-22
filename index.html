@@ -3,39 +3,58 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NEXORA Studio | Digital Solutions</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<title>NEXORA Studio</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{ --bg:#050505; --card:#0a0a0a; --stroke:#1f1f1f; --text:#ffffff; --muted:#a0a0a0; --a:#6366f1; }
-*{ margin:0; padding:0; box-sizing:border-box; font-family:'Inter', sans-serif; }
-body{ background-color:var(--bg); color:var(--text); line-height:1.6; overflow-x:hidden; }
+:root{
+  --bg:#050505;
+  --card:rgba(255,255,255,0.03);
+  --stroke:rgba(255,255,255,0.08);
+  --text:#ffffff;
+  --muted:rgba(255,255,255,0.6);
+  --a:#6366f1;
+}
 
-nav{ position:fixed; top:0; width:100%; padding:20px 8%; display:flex; justify-content:space-between; align-items:center; backdrop-filter:blur(20px); background:rgba(5,5,5,0.8); border-bottom:1px solid var(--stroke); z-index:1000; }
+*{ margin:0; padding:0; box-sizing:border-box; font-family:Inter; }
+
+body{ background:radial-gradient(circle at top,#0B1020,var(--bg)); color:var(--text); overflow-x:hidden; }
+
+/* NAV */
+nav{ position:fixed; top:0; width:100%; padding:14px 8%; display:flex; justify-content:space-between; align-items:center; backdrop-filter:blur(18px); background:rgba(0,0,0,0.35); border-bottom:1px solid var(--stroke); z-index:1000; }
 .logo img{ height:38px; }
 .nav-links { display: flex; gap: 32px; }
-.nav-links a{ color:var(--text); text-decoration:none; font-size:14px; font-weight:500; }
-.nav-links a:hover{ color:var(--a); }
+.nav-links a { color:var(--muted); text-decoration:none; font-size:13px; font-weight:600; }
+.nav-links a:hover{ color:white; }
 
-.hero{ padding:160px 8% 80px; text-align:center; }
-.hero h1{ font-size:48px; font-weight:700; margin-bottom:20px; }
-.hero p{ font-size:18px; color:var(--muted); max-width:600px; margin:0 auto 30px; }
-.btn{ display:inline-block; padding:14px 30px; background:var(--a); color:white; text-decoration:none; border-radius:6px; font-weight:600; }
+/* HERO */
+.hero{ padding:160px 8% 60px; text-align:center; }
+.hero h1{ font-size:44px; line-height:1.1; max-width:800px; margin:0 auto; color:white; font-weight:700; }
+.hero p{ margin-top:14px; color:var(--muted); max-width:650px; margin:0 auto; }
 
-.section{ padding:80px 8%; }
-.title{ text-align:center; font-size:32px; margin-bottom:50px; font-weight:700; }
-.grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:24px; }
-.card{ background:var(--card); border:1px solid var(--stroke); padding:30px; border-radius:8px; }
+/* DISCLAIMERS */
+.disclaimers { display: flex; justify-content: center; gap: 15px; margin-top: 30px; flex-wrap: wrap; }
+.disc-item { padding: 8px 16px; border: 1px solid var(--a); border-radius: 8px; font-size: 11px; color: var(--a); background: rgba(99, 102, 241, 0.05); }
 
-/* DISCLAIMER SECTION */
-.disclaimers{ display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:20px; max-width:900px; margin:40px auto; }
-.disclaimer-item{ padding:20px; border:1px solid var(--a); border-radius:8px; text-align:center; background:rgba(99,102,241,0.05); }
+.btn{ margin-top:22px; display:inline-block; padding:11px 18px; border-radius:10px; background:var(--a); color:white; text-decoration:none; font-weight:500; }
 
+/* SECTIONS */
+.section{ padding:70px 8%; }
+.title{ text-align:center; font-size:22px; margin-bottom:22px; }
+
+.grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px; }
+.card{ background:var(--card); border:1px solid var(--stroke); padding:22px; border-radius:16px; transition:.35s ease; }
+.card:hover{ transform:translateY(-6px); border-color:var(--a); }
+
+/* CTA */
 .cta{ text-align:center; padding:80px 8%; background:rgba(255,255,255,0.03); border-top:1px solid var(--stroke); }
 form{ max-width:450px; margin:20px auto 0; display:flex; flex-direction:column; gap:10px; }
-input,textarea{ padding:12px; border-radius:6px; border:1px solid var(--stroke); background:var(--card); color:white; width:100%; }
-footer{ text-align:center; padding:40px; font-size:12px; color:var(--muted); }
+input,textarea{ padding:10px; border-radius:10px; border:1px solid rgba(255,255,255,0.1); background:rgba(255,255,255,0.03); color:white; width:100%; }
+textarea{ height:90px; }
+
+footer{ text-align:center; padding:25px; font-size:12px; color:rgba(255,255,255,0.5); }
 </style>
 </head>
+
 <body>
 
 <nav>
@@ -48,35 +67,35 @@ footer{ text-align:center; padding:40px; font-size:12px; color:var(--muted); }
 </nav>
 
 <section class="hero">
-  <h1>Soluzioni digitali per il business moderno.</h1>
-  <p>Sviluppo siti web, landing page e automazioni orientate ai risultati.</p>
-  <a class="btn" href="#contatto">Richiedi una consulenza</a>
-</section>
-
-<!-- DISCLAIMERS -->
-<section class="section" style="padding-top:0;">
+  <h1>Costruiamo esperienze digitali che aiutano aziende e professionisti a crescere online.</h1>
+  <p>Siti web, landing page e sistemi digitali progettati per comunicare meglio, generare opportunità e valorizzare il tuo brand.</p>
+  
   <div class="disclaimers">
-    <div class="disclaimer-item"><strong>Velocità</strong><br><small>Codice ottimizzato per performance al top.</small></div>
-    <div class="disclaimer-item"><strong>Mobile First</strong><br><small>Design perfetto su ogni dispositivo.</small></div>
-    <div class="disclaimer-item"><strong>Conversione</strong><br><small>Strutture pensate per farti guadagnare.</small></div>
+    <div class="disc-item">Performance Ottimizzata</div>
+    <div class="disc-item">Mobile Responsive</div>
+    <div class="disc-item">Focus Conversioni</div>
   </div>
+
+  <a class="btn" href="#contatto">Richiedi una consulenza</a>
 </section>
 
 <section id="servizi" class="section">
   <div class="title">Servizi</div>
   <div class="grid">
-    <div class="card"><h3>Siti Web</h3><p>Realizzazione di siti professionali, veloci e sicuri.</p></div>
-    <div class="card"><h3>Landing Page</h3><p>Pagine ottimizzate per acquisire nuovi clienti.</p></div>
-    <div class="card"><h3>Automazioni</h3><p>Integrazioni AI per semplificare il tuo lavoro.</p></div>
+    <div class="card"><h3>Siti Web</h3><p>Moderni e ottimizzati per conversioni.</p></div>
+    <div class="card"><h3>Landing Page</h3><p>Progettate per acquisire clienti.</p></div>
+    <div class="card"><h3>Automazioni AI</h3><p>Semplificazione dei processi digitali.</p></div>
   </div>
 </section>
 
 <section id="lavori" class="section">
   <div class="title">Lavori</div>
-  <div class="card" style="max-width: 400px; margin: 0 auto; text-align: center;">
-    <h3>GV Solutions</h3>
-    <p style="margin: 15px 0; color:var(--muted);">Progetto web orientato alle performance e alla UX.</p>
-    <a href="https://giupe-lab.github.io" target="_blank" style="color:var(--a); font-weight:600; text-decoration:none;">Visita il sito &rarr;</a>
+  <div class="grid" style="justify-content: center;">
+    <div class="card" style="max-width: 400px;">
+      <h3>GV Solutions</h3>
+      <p style="margin: 10px 0; color: var(--muted);">Portfolio web professionale orientato alle performance. Un'interfaccia moderna e pulita.</p>
+      <a href="https://giupe-lab.github.io" target="_blank" style="color:var(--a);text-decoration:none;font-weight:600;margin-top:10px;display:block;">Visita il sito &rarr;</a>
+    </div>
   </div>
 </section>
 
@@ -92,7 +111,8 @@ footer{ text-align:center; padding:40px; font-size:12px; color:var(--muted); }
 </section>
 
 <footer>
-  <p>© 2026 NEXORA Studio | nexoradigi.studio@gmail.com</p>
+  <p>💻 NEXORA Studio | 📩 nexoradigi.studio@gmail.com</p>
+  <p>© 2026 NEXORA Studio</p>
 </footer>
 
 </body>
