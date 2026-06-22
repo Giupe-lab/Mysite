@@ -3,34 +3,40 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NEXORA Studio | Digital Solutions</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<title>NEXORA Studio | Strategia e Sviluppo Digitale</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 <style>
-:root{ --bg:#050505; --card:#0a0a0a; --stroke:#1f1f1f; --text:#ffffff; --muted:#a0a0a0; --a:#6366f1; }
+:root{ --bg:#05070F; --card:rgba(255,255,255,0.04); --stroke:rgba(255,255,255,0.08); --text:#EAF0FF; --muted:rgba(234,240,255,0.65); --a:#6C7CFF; --b:#2EE9A6; }
 *{ margin:0; padding:0; box-sizing:border-box; font-family:'Inter', sans-serif; }
-body{ background-color:var(--bg); color:var(--text); line-height:1.6; }
+body{ background:radial-gradient(circle at top,#0B1020,var(--bg)); color:var(--text); line-height:1.6; overflow-x:hidden; }
 
-nav{ position:fixed; top:0; width:100%; padding:20px 8%; display:flex; justify-content:space-between; align-items:center; backdrop-filter:blur(20px); background:rgba(5,5,5,0.8); border-bottom:1px solid var(--stroke); z-index:1000; }
+/* NAV */
+nav{ position:fixed; top:0; width:100%; padding:20px 8%; display:flex; justify-content:space-between; align-items:center; backdrop-filter:blur(18px); background:rgba(0,0,0,0.4); border-bottom:1px solid var(--stroke); z-index:1000; }
 .logo img{ height:38px; }
 .nav-links { display: flex; gap: 32px; }
-.nav-links a{ color:var(--text); text-decoration:none; font-size:14px; font-weight:500; }
+.nav-links a{ color:var(--muted); text-decoration:none; font-size:14px; font-weight:600; transition:0.3s; }
+.nav-links a:hover{ color:white; }
 
-.hero{ padding:160px 8% 80px; text-align:center; }
-.hero h1{ font-size:52px; font-weight:700; margin-bottom:20px; }
-.hero p{ font-size:18px; color:var(--muted); max-width:600px; margin:0 auto 30px; }
+/* HERO */
+.hero{ padding:180px 8% 100px; text-align:center; }
+.hero h1{ font-size:52px; line-height:1.1; max-width:850px; margin:0 auto 20px; background:linear-gradient(90deg,var(--a),var(--b)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; font-weight:700; }
+.hero p{ font-size:18px; color:var(--muted); max-width:700px; margin:0 auto 30px; }
+.btn{ display:inline-block; padding:14px 28px; border-radius:10px; background:linear-gradient(90deg,var(--a),var(--b)); color:#000; font-weight:700; text-decoration:none; transition:0.3s; }
 
+/* SECTIONS */
 .section{ padding:80px 8%; }
-.title{ font-size:32px; margin-bottom:50px; font-weight:700; text-align:center; }
+.title{ text-align:center; font-size:32px; margin-bottom:50px; font-weight:700; }
 .grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:24px; }
-.card{ background:var(--card); border:1px solid var(--stroke); padding:30px; border-radius:8px; }
+.card{ background:var(--card); border:1px solid var(--stroke); padding:30px; border-radius:16px; transition:.3s; }
+.card:hover{ border-color:rgba(108,124,255,.35); transform:translateY(-5px); }
 
-/* NUOVA SEZIONE PROCESSO */
-.process{ display:flex; justify-content:space-between; gap:20px; margin-top:40px; }
-.step{ flex:1; padding:20px; border-left:2px solid var(--a); }
+/* SEZIONE CONTATTO ORIGINALE */
+.cta{ text-align:center; padding:80px 8%; background:rgba(255,255,255,0.03); border-top:1px solid var(--stroke); }
+form{ max-width:450px; margin:20px auto 0; display:flex; flex-direction:column; gap:10px; }
+input,textarea{ padding:12px; border-radius:10px; border:1px solid rgba(255,255,255,0.1); background:rgba(255,255,255,0.03); color:white; width:100%; }
+textarea{ height:100px; }
 
-.btn{ display:inline-block; padding:14px 30px; background:var(--a); color:white; text-decoration:none; border-radius:6px; font-weight:600; }
-
-footer{ padding:60px 8%; border-top:1px solid var(--stroke); color:var(--muted); text-align:center; }
+footer{ text-align:center; padding:25px; font-size:12px; color:rgba(255,255,255,0.5); }
 </style>
 </head>
 <body>
@@ -39,48 +45,59 @@ footer{ padding:60px 8%; border-top:1px solid var(--stroke); color:var(--muted);
   <a class="logo" href="#"><img src="logo.svg" alt="NEXORA"></a>
   <div class="nav-links">
     <a href="#servizi">Servizi</a>
+    <a href="#metodo">Metodo</a>
     <a href="#lavori">Lavori</a>
     <a href="#contatto">Contatto</a>
   </div>
 </nav>
 
 <section class="hero">
-  <h1>Soluzioni digitali per il business moderno.</h1>
-  <p>Non costruiamo solo siti web. Progettiamo strumenti digitali che ottimizzano i flussi di lavoro e accelerano la tua crescita online.</p>
-  <a class="btn" href="#contatto">Inizia una consulenza</a>
+  <h1>Costruiamo esperienze digitali che fanno crescere il tuo business.</h1>
+  <p>Siti web, landing page e automazioni studiate per comunicare valore, creare fiducia e ottimizzare i tuoi risultati online.</p>
+  <a class="btn" href="#contatto">Richiedi una consulenza</a>
 </section>
 
 <section id="servizi" class="section">
-  <div class="title">Servizi Specializzati</div>
+  <div class="title">Servizi</div>
   <div class="grid">
-    <div class="card"><h3>Sviluppo Web Custom</h3><p>Siti realizzati su misura, veloci, sicuri e SEO-friendly per scalare il mercato.</p></div>
-    <div class="card"><h3>Landing Page ad alta conversione</h3><p>Strategie di design mirate a convertire ogni singolo visitatore in un potenziale cliente.</p></div>
-    <div class="card"><h3>Automazione dei Processi</h3><p>Integrazioni AI e workflow automatizzati per liberare il tuo tempo e ridurre i costi.</p></div>
+    <div class="card"><h3>Siti Web Professionali</h3><p>Design moderno, navigazione intuitiva e performance tecniche d'eccellenza.</p></div>
+    <div class="card"><h3>Landing Page Strategiche</h3><p>Pagina ottimizzate per la conversione: trasformiamo visitatori in contatti.</p></div>
+    <div class="card"><h3>Automazione Digitale</h3><p>Workflow intelligenti per snellire i processi aziendali e risparmiare tempo.</p></div>
   </div>
 </section>
 
-<section class="section" style="background:var(--card);">
-  <div class="title">Il Nostro Metodo</div>
-  <div class="process">
-    <div class="step"><h4>01. Analisi</h4><p>Studiamo il tuo mercato e i tuoi obiettivi di business.</p></div>
-    <div class="step"><h4>02. Design</h4><p>Creiamo un'interfaccia intuitiva e professionale.</p></div>
-    <div class="step"><h4>03. Sviluppo</h4><p>Costruiamo la soluzione con codice pulito e performante.</p></div>
+<section id="metodo" class="section">
+  <div class="title">Come lavoriamo</div>
+  <div class="grid">
+    <div class="card"><h3>1. Analisi</h3><p>Ascoltiamo le tue esigenze e definiamo la strategia migliore per i tuoi obiettivi.</p></div>
+    <div class="card"><h3>2. Design</h3><p>Progettiamo interfacce moderne, pulite e coerenti con la tua identità.</p></div>
+    <div class="card"><h3>3. Sviluppo</h3><p>Realizziamo soluzioni veloci, sicure e responsive per ogni dispositivo.</p></div>
   </div>
 </section>
 
 <section id="lavori" class="section">
-  <div class="title">Progetto in primo piano</div>
-  <div class="card" style="max-width: 600px; margin: 0 auto; text-align: center;">
+  <div class="title">Lavori</div>
+  <div class="card" style="max-width: 400px; margin: 0 auto; text-align: center;">
     <h3>GV Solutions</h3>
-    <p style="margin: 20px 0;">Portfolio web ad alte performance. Un esempio di come la pulizia estetica incontri la funzionalità tecnica.</p>
-    <a href="https://giupe-lab.github.io" target="_blank" style="color:var(--a); font-weight:700; text-decoration:none;">Visualizza il sito &rarr;</a>
+    <p style="margin: 15px 0; color: var(--muted);">Portfolio web professionale basato su un'architettura performante.</p>
+    <a href="https://giupe-lab.github.io" target="_blank" style="color:var(--a); font-weight:600; text-decoration:none;">Visualizza il sito &rarr;</a>
   </div>
 </section>
 
-<footer id="contatto">
-  <h2>Pronto per iniziare?</h2>
-  <p style="margin:20px 0;">Scrivici a nexoradigi.studio@gmail.com per discutere il tuo prossimo progetto.</p>
-  <p>© 2026 NEXORA Studio.</p>
+<section id="contatto" class="cta">
+  <h2>Parliamo del tuo progetto</h2>
+  <p>Ti rispondiamo entro 24 ore.</p>
+  <form action="https://formspree.io/f/xnjybgwk" method="POST">
+    <input type="text" name="name" placeholder="Nome" required>
+    <input type="email" name="email" placeholder="Email" required>
+    <textarea name="message" placeholder="Di cosa hai bisogno?" required></textarea>
+    <button class="btn" type="submit">Invia richiesta</button>
+  </form>
+</section>
+
+<footer>
+  <p>💻NEXORA Studio | nexoradigi.studio@gmail.com | @nexora_digitalstudio</p>
+  <p>© 2026 NEXORA Studio</p>
 </footer>
 
 </body>
