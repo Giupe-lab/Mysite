@@ -4,48 +4,212 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>NEXORA Studio</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-:root{ --bg:#05070F; --card:rgba(255,255,255,0.04); --stroke:rgba(255,255,255,0.08); --text:#EAF0FF; --muted:rgba(234,240,255,0.65); --a:#6C7CFF; --b:#2EE9A6; }
-*{ margin:0; padding:0; box-sizing:border-box; font-family:Inter; }
-body{ background:radial-gradient(circle at top,#0B1020,var(--bg)); color:var(--text); overflow-x:hidden; }
+:root{
+  --bg:#05070F;
+  --card:rgba(255,255,255,0.04);
+  --stroke:rgba(255,255,255,0.08);
+  --text:#EAF0FF;
+  --muted:rgba(234,240,255,0.65);
+  --a:#6C7CFF;
+  --b:#2EE9A6;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Inter;
+}
+
+body{
+  background:radial-gradient(circle at top,#0B1020,var(--bg));
+  color:var(--text);
+  overflow-x:hidden;
+}
 
 /* NAV */
-nav{ position:fixed; top:0; width:100%; padding:14px 8%; display:flex; justify-content:space-between; align-items:center; backdrop-filter:blur(18px); background:rgba(0,0,0,0.35); border-bottom:1px solid var(--stroke); z-index:1000; }
-.nav-links { display: flex; gap: 32px; }
-.nav-links a{ color:var(--muted); text-decoration:none; font-size:13px; font-weight:600; }
-.nav-links a:hover{ color:white; }
-.logo img{ height:38px; }
+nav{
+  position:fixed;
+  top:0;
+  width:100%;
+  padding:14px 8%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  backdrop-filter:blur(18px);
+  background:rgba(0,0,0,0.35);
+  border-bottom:1px solid var(--stroke);
+  z-index:1000;
+}
+
+.nav-links {
+    display: flex;
+    gap: 32px;
+}
+
+.nav-links a {
+    font-size: 1.15rem;
+    font-weight: 600;
+}
+
+.nav-links a{
+  color:var(--muted);
+  text-decoration:none;
+  font-size:13px;
+}
+
+.nav-links a:hover{
+  color:white;
+}
+
+/* LOGO */
+.logo img{
+  height:38px;
+}
 
 /* HERO */
-.hero{ padding:160px 8% 60px; text-align:center; }
-.hero h1{ font-size:44px; line-height:1.1; max-width:800px; margin:0 auto; background:linear-gradient(90deg,var(--a),var(--b)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
-.hero p{ margin-top:14px; color:var(--muted); max-width:650px; margin:0 auto; }
-.btn{ margin-top:22px; display:inline-block; padding:11px 18px; border-radius:10px; background:linear-gradient(90deg,var(--a),var(--b)); color:#000; text-decoration:none; font-weight:500; }
+.hero{
+  padding:160px 8% 60px;
+  text-align:center;
+}
+
+.hero h1{
+  font-size:44px;
+  line-height:1.1;
+  max-width:800px;
+  margin:0 auto;
+  background:linear-gradient(90deg,var(--a),var(--b));
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.hero p{
+  margin-top:14px;
+  color:var(--muted);
+  max-width:650px;
+  margin:0 auto;
+}
+
+.btn{
+  margin-top:22px;
+  display:inline-block;
+  padding:11px 18px;
+  border-radius:10px;
+  background:linear-gradient(90deg,var(--a),var(--b));
+  color:#000;
+  text-decoration:none;
+  font-weight:500;
+}
 
 /* SECTIONS */
-.section{ padding:70px 8%; }
-.title{ text-align:center; font-size:22px; margin-bottom:22px; }
-.grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px; }
-.card{ background:var(--card); border:1px solid var(--stroke); padding:22px; border-radius:16px; transition:.35s ease; }
-.card:hover{ transform:translateY(-6px); border-color:rgba(108,124,255,.35); }
+.section{
+  padding:70px 8%;
+}
 
-/* CONTATTO */
-.cta{ text-align:center; padding:80px 8%; background:rgba(255,255,255,0.03); border-top:1px solid var(--stroke); }
-form{ max-width:450px; margin:20px auto 0; display:flex; flex-direction:column; gap:10px; }
-input,textarea{ padding:10px; border-radius:10px; border:1px solid rgba(255,255,255,0.1); background:rgba(255,255,255,0.03); color:white; width:100%; }
-textarea{ height:90px; }
-footer{ text-align:center; padding:25px; font-size:12px; color:rgba(255,255,255,0.5); }
+.title{
+  text-align:center;
+  font-size:22px;
+  margin-bottom:22px;
+}
 
-@media (max-width:768px){ .hero h1{ font-size:30px; } nav{ padding:12px 6%; } .section{ padding:55px 6%; } }
+/* GRID */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:16px;
+}
+
+/* CARD */
+.card{
+  background:var(--card);
+  border:1px solid var(--stroke);
+  padding:22px;
+  border-radius:16px;
+  transition:.35s ease;
+}
+
+.card:hover{
+  transform:translateY(-6px);
+  border-color:rgba(108,124,255,.35);
+}
+
+/* CTA */
+.cta{
+  text-align:center;
+  padding:80px 8%;
+  background:rgba(255,255,255,0.03);
+  border-top:1px solid var(--stroke);
+}
+
+form{
+  max-width:450px;
+  margin:20px auto 0;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+input,textarea{
+  padding:10px;
+  border-radius:10px;
+  border:1px solid rgba(255,255,255,0.1);
+  background:rgba(255,255,255,0.03);
+  color:white;
+  width:100%;
+}
+
+textarea{
+  height:90px;
+}
+
+footer{
+  text-align:center;
+  padding:25px;
+  font-size:12px;
+  color:rgba(255,255,255,0.5);
+}
+
+/* MOBILE */
+@media (max-width:768px){
+
+  .hero h1{
+    font-size:30px;
+  }
+
+  nav{
+    padding:12px 6%;
+  }
+
+  .section{
+    padding:55px 6%;
+  }
+}@media (min-width: 769px) {
+
+  .nav-links {
+    gap: 40px;
+  }
+
+  .nav-links a {
+    font-size: 1.25rem;
+    font-weight: 700;
+  }
+
+}
 </style>
 </head>
 
 <body>
 
+<!-- NAV -->
 <nav>
-  <a class="logo" href="#"><img src="logo.svg" alt="NEXORA"></a>
+  <a class="logo" href="#">
+    <img src="logo.svg" alt="NEXORA">
+  </a>
+
   <div class="nav-links">
     <a href="#servizi">Servizi</a>
     <a href="#lavori">Lavori</a>
@@ -53,22 +217,112 @@ footer{ text-align:center; padding:25px; font-size:12px; color:rgba(255,255,255,
   </div>
 </nav>
 
+<!-- HERO -->
 <section class="hero">
-  <h1>Costruiamo esperienze digitali che aiutano aziende e professionisti a crescere online.</h1>
-  <p>Siti web, landing page e sistemi digitali progettati per comunicare meglio, generare opportunità e valorizzare il tuo brand.</p>
-  <a class="btn" href="#contatto">Richiedi una consulenza</a>
+<h1>
+Costruiamo esperienze digitali che aiutano aziende e professionisti a crescere online.
+</h1>
+<p>
+Siti web, landing page e sistemi digitali progettati per comunicare meglio,
+generare opportunità e valorizzare il tuo brand.
+</p>
+<div style="margin-top:20px;color:rgba(255,255,255,.45);font-size:13px;">
+Design moderno • Performance • Strategia digitale
+</div>
+<a class="btn" href="#contatto">
+Richiedi una consulenza
+</a>
 </section>
 
-<!-- SEZIONE LAVORI -->
+<!-- SERVIZI -->
+<section id="servizi" class="section">
+  <div class="title">Servizi</div>
+  <div class="grid">
+    <div class="card">
+      <h3>Siti Web</h3>
+      <p>Moderni e ottimizzati per conversioni.</p>
+    </div>
+    <div class="card">
+      <h3>Landing Page</h3>
+      <p>Progettate per acquisire clienti.</p>
+    </div>
+    <div class="card">
+      <h3>Automazioni AI</h3>
+      <p>Semplificazione dei processi digitali.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+<div class="title">Come lavoriamo</div>
+<div class="grid">
+<div class="card">
+<h3>Strategia</h3>
+<p>Analizziamo obiettivi, pubblico e posizionamento prima di progettare.</p>
+</div>
+<div class="card">
+<h3>Design</h3>
+<p>Creiamo interfacce moderne, chiare e coerenti con il brand.</p>
+</div>
+<div class="card">
+<h3>Sviluppo</h3>
+<p>Realizziamo soluzioni veloci, responsive e orientate ai risultati.</p>
+</div>
+</div>
+</section>
+
+<!-- LAVORI -->
 <section id="lavori" class="section">
   <div class="title">Lavori</div>
   <div class="grid" style="justify-content: center;">
-    <div class="card" style="max-width: 300px;">
+    <div class="card">
       <h3>GV Solution</h3>
-      <p style="margin: 10px 0; color: var(--muted);">Progetto web realizzato.</p>
-      <a href="https://tinyurl.com/nexora-it" style="color: var(--a); text-decoration: none; font-weight: bold;">Vai al progetto &rarr;</a>
+      <p>Progetto web realizzato per il cliente.<br> Sviluppo focalizzato su performance e design.</p>
+      <a href="https://tinyurl.com/nexora-it" style="color:var(--a);text-decoration:none;font-weight:600;margin-top:10px;display:block;">Visualizza progetto &rarr;</a>
     </div>
   </div>
+</section>
+
+<section class="section">
+<div class="card" style="max-width:700px;margin:auto;text-align:center;">
+<h3>Hai un progetto in mente?</h3>
+<p style="margin-top:10px;color:var(--muted);">
+Possiamo trasformare la tua idea in una presenza digitale moderna,
+professionale e orientata ai risultati.
+</p>
+<a class="btn" href="#contatto">
+Richiedi una consulenza
+</a>
+</div>
+</section>
+
+<section class="section">
+<div class="title">Perché scegliere NEXORA</div>
+<div class="grid">
+<div class="card">
+<h3>Design moderno</h3>
+<p>Interfacce essenziali, eleganti e progettate per durare.</p>
+</div>
+<div class="card">
+<h3>Performance</h3>
+<p>Esperienza veloce e ottimizzata su desktop e mobile.</p>
+</div>
+<div class="card">
+<h3>Approccio orientato agli obiettivi</h3>
+<p>Ogni progetto nasce per supportare una crescita concreta.</p>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="title">Il nostro approccio</div>
+<div class="card" style="max-width:850px;margin:auto;text-align:center;">
+<p style="line-height:1.8;color:var(--muted);">
+Crediamo che un buon progetto digitale non debba essere solo bello da vedere.
+Ogni sito, landing page o sistema che realizziamo nasce con un obiettivo preciso:
+comunicare valore, creare fiducia e supportare la crescita del business nel tempo.
+</p>
+</div>
 </section>
 
 <!-- CONTATTO -->
@@ -86,6 +340,7 @@ footer{ text-align:center; padding:25px; font-size:12px; color:rgba(255,255,255,
 <footer>
   <p>💻NEXORA Studio</p>
   <p>📩nexoradigi.studio@gmail.com</p>
+  <p>@nexora_digitalstudio</p>
   <p>© 2026 NEXORA Studio</p>
 </footer>
 
