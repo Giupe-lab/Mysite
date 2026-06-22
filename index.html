@@ -9,54 +9,49 @@
 
 <style>
 :root{
-  --bg:#05070F;
-  --card:rgba(255,255,255,0.03);
-  --stroke:rgba(255,255,255,0.08);
-  --text:#EAF0FF;
-  --muted:rgba(234,240,255,0.65);
-  --a:#6C7CFF;
-  --b:#2EE9A6;
+  --bg:#050505;
+  --card:#0a0a0a;
+  --stroke:#1f1f1f;
+  --text:#ffffff;
+  --muted:#a0a0a0;
+  --a:#6366f1; /* Colore accento principale: Indigo */
 }
 
 *{ margin:0; padding:0; box-sizing:border-box; font-family:'Inter', sans-serif; }
+body{ background-color:var(--bg); color:var(--text); overflow-x:hidden; line-height:1.6; }
 
-body{ background:radial-gradient(circle at top,#0B1020,var(--bg)); color:var(--text); overflow-x:hidden; line-height:1.6; }
-
-nav{ position:fixed; top:0; width:100%; padding:20px 8%; display:flex; justify-content:space-between; align-items:center; backdrop-filter:blur(20px); background:rgba(5,7,15,0.8); border-bottom:1px solid var(--stroke); z-index:1000; }
-
+nav{ position:fixed; top:0; width:100%; padding:20px 8%; display:flex; justify-content:space-between; align-items:center; backdrop-filter:blur(20px); background:rgba(5,5,5,0.8); border-bottom:1px solid var(--stroke); z-index:1000; }
 .logo img{ height:38px; display:block; }
 
 .nav-links { display: flex; gap: 32px; }
-.nav-links a{ color:var(--muted); text-decoration:none; font-size:14px; font-weight:500; transition:0.3s; }
-.nav-links a:hover{ color:white; }
+.nav-links a{ color:var(--text); text-decoration:none; font-size:14px; font-weight:500; transition:0.3s; }
+.nav-links a:hover{ color:var(--a); }
 
 .hero{ padding:180px 8% 80px; text-align:center; }
-.hero h1{ font-size:52px; line-height:1.1; max-width:850px; margin:0 auto 20px; background:linear-gradient(90deg,var(--a),var(--b)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; font-weight:700; }
+.hero h1{ font-size:52px; line-height:1.1; max-width:850px; margin:0 auto 20px; font-weight:700; }
 .hero p{ margin-bottom:30px; color:var(--muted); max-width:650px; margin:0 auto 30px; font-size:18px; }
 
-/* SKILLS TAGS */
+/* TAGS */
 .skills{ display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-bottom:40px; }
-.tag{ padding:6px 16px; background:var(--card); border:1px solid var(--stroke); border-radius:20px; font-size:12px; color:var(--muted); }
+.tag{ padding:6px 16px; background:var(--card); border:1px solid var(--stroke); border-radius:6px; font-size:12px; color:var(--muted); }
 
-.btn{ display:inline-block; padding:14px 28px; border-radius:10px; background:linear-gradient(90deg,var(--a),var(--b)); color:#000; text-decoration:none; font-weight:600; transition:0.3s; }
-.btn:hover{ transform:translateY(-2px); opacity:0.9; }
+.btn{ display:inline-block; padding:14px 30px; border-radius:6px; background:var(--a); color:white; text-decoration:none; font-weight:600; transition:0.3s; }
+.btn:hover{ opacity:0.9; }
 
 .section{ padding:80px 8%; }
 .title{ text-align:center; font-size:28px; margin-bottom:40px; font-weight:600; }
 
 .grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:24px; }
-.card{ background:var(--card); border:1px solid var(--stroke); padding:30px; border-radius:16px; transition:.4s ease; }
-.card:hover{ transform:translateY(-8px); border-color:var(--a); background:rgba(255,255,255,0.05); }
+.card{ background:var(--card); border:1px solid var(--stroke); padding:30px; border-radius:8px; transition:.3s ease; }
+.card:hover{ border-color:var(--a); }
 
-.cta{ text-align:center; padding:100px 8%; background:rgba(255,255,255,0.02); border-top:1px solid var(--stroke); border-bottom:1px solid var(--stroke); }
-
-input,textarea{ padding:15px; border-radius:10px; border:1px solid var(--stroke); background:rgba(255,255,255,0.03); color:white; width:100%; margin-bottom:15px; }
-footer{ text-align:center; padding:40px; font-size:13px; color:rgba(255,255,255,0.4); }
+.cta{ text-align:center; padding:100px 8%; background:var(--card); border-top:1px solid var(--stroke); }
+input,textarea{ padding:15px; border-radius:6px; border:1px solid var(--stroke); background:#050505; color:white; width:100%; margin-bottom:15px; }
+footer{ text-align:center; padding:40px; font-size:13px; color:var(--muted); border-top:1px solid var(--stroke); }
 
 @media (max-width:768px){ .hero h1{ font-size:36px; } }
 </style>
 </head>
-
 <body>
 
 <nav>
@@ -71,13 +66,12 @@ footer{ text-align:center; padding:40px; font-size:13px; color:rgba(255,255,255,
 </nav>
 
 <section class="hero">
-  <h1>Soluzioni digitali che aiutano il tuo business a crescere.</h1>
-  <p>Progettiamo siti web, landing page e sistemi digitali pensati per convertire e valorizzare il tuo brand.</p>
+  <h1>Soluzioni digitali per il business moderno.</h1>
+  <p>Sviluppo di piattaforme web e sistemi digitali orientati alla performance e alla crescita del tuo brand.</p>
   <div class="skills">
     <span class="tag">Web Development</span>
     <span class="tag">UI/UX Design</span>
-    <span class="tag">Landing Pages</span>
-    <span class="tag">Performance Optimization</span>
+    <span class="tag">Performance & SEO</span>
   </div>
   <a class="btn" href="#contatto">Inizia un progetto</a>
 </section>
@@ -85,18 +79,18 @@ footer{ text-align:center; padding:40px; font-size:13px; color:rgba(255,255,255,
 <section id="servizi" class="section">
   <div class="title">Servizi</div>
   <div class="grid">
-    <div class="card"><h3>Siti Web</h3><p style="color:var(--muted)">Moderni, veloci e ottimizzati per massimizzare le conversioni.</p></div>
-    <div class="card"><h3>Landing Page</h3><p style="color:var(--muted)">Strategie mirate per acquisire nuovi clienti ogni giorno.</p></div>
-    <div class="card"><h3>Automazioni</h3><p style="color:var(--muted)">Semplifichiamo i tuoi processi digitali tramite l'intelligenza artificiale.</p></div>
+    <div class="card"><h3>Siti Web</h3><p style="color:var(--muted)">Sviluppo professionale, veloce e ottimizzato.</p></div>
+    <div class="card"><h3>Landing Page</h3><p style="color:var(--muted)">Pagine progettate per convertire i visitatori in clienti.</p></div>
+    <div class="card"><h3>Automazioni</h3><p style="color:var(--muted)">Semplificazione dei processi tramite soluzioni digitali.</p></div>
   </div>
 </section>
 
 <section id="lavori" class="section">
-  <div class="title">Lavori in evidenza</div>
+  <div class="title">Lavori selezionati</div>
   <div class="card" style="max-width: 600px; margin: 0 auto; text-align: center;">
     <h3>GV Solutions</h3>
-    <p style="margin: 15px 0; color: var(--muted);">Portfolio web professionale orientato alle performance. Un'interfaccia pulita, progettata per offrire un'esperienza utente fluida.</p>
-    <a href="https://giupe-lab.github.io" target="_blank" style="color:var(--a);text-decoration:none;font-weight:600;">Visita il sito &rarr;</a>
+    <p style="margin: 15px 0; color: var(--muted);">Piattaforma web orientata alle performance. Design minimale e focus sull'esperienza utente.</p>
+    <a href="https://giupe-lab.github.io" target="_blank" style="color:var(--a);text-decoration:none;font-weight:600;">Visualizza progetto &rarr;</a>
   </div>
 </section>
 
@@ -105,7 +99,7 @@ footer{ text-align:center; padding:40px; font-size:13px; color:rgba(255,255,255,
   <form action="https://formspree.io/f/xnjybgwk" method="POST" style="max-width:500px; margin:0 auto;">
     <input type="text" name="name" placeholder="Il tuo nome" required>
     <input type="email" name="email" placeholder="La tua email" required>
-    <textarea name="message" placeholder="Di cosa hai bisogno?" required></textarea>
+    <textarea name="message" placeholder="Descrivi le tue esigenze" required></textarea>
     <button class="btn" type="submit" style="width:100%; border:none; cursor:pointer;">Invia messaggio</button>
   </form>
 </section>
