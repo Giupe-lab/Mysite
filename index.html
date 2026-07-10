@@ -1,119 +1,944 @@
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NEXORA Studio</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<title>NEXORA Studio | Digital Experiences</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
 <style>
+
 :root{
-  --bg:#050505;
-  --card:rgba(255,255,255,0.03);
-  --stroke:rgba(255,255,255,0.08);
-  --text:#ffffff;
-  --muted:rgba(255,255,255,0.6);
-  --a:#6366f1;
+--bg:#050505;
+--card:rgba(255,255,255,0.04);
+--stroke:rgba(255,255,255,0.09);
+--text:#ffffff;
+--muted:rgba(255,255,255,0.65);
+--a:#6366f1;
 }
 
-*{ margin:0; padding:0; box-sizing:border-box; font-family:Inter; }
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Inter,sans-serif;
+}
 
-body{ background:radial-gradient(circle at top,#0B1020,var(--bg)); color:var(--text); overflow-x:hidden; }
+html{
+scroll-behavior:smooth;
+}
+
+body{
+background:
+radial-gradient(circle at top,#101735,var(--bg));
+color:var(--text);
+overflow-x:hidden;
+}
+
 
 /* NAV */
-nav{ position:fixed; top:0; width:100%; padding:14px 8%; display:flex; justify-content:space-between; align-items:center; backdrop-filter:blur(18px); background:rgba(0,0,0,0.35); border-bottom:1px solid var(--stroke); z-index:1000; }
-.logo img{ height:38px; }
-.nav-links { display: flex; gap: 32px; }
-.nav-links a { color:var(--muted); text-decoration:none; font-size:13px; font-weight:600; }
-.nav-links a:hover{ color:white; }
+
+nav{
+
+position:fixed;
+top:0;
+width:100%;
+padding:15px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+background:rgba(0,0,0,0.35);
+backdrop-filter:blur(20px);
+
+border-bottom:1px solid var(--stroke);
+
+z-index:1000;
+
+}
+
+.logo img{
+
+height:38px;
+
+}
+
+
+.nav-links{
+
+display:flex;
+gap:28px;
+
+}
+
+
+.nav-links a{
+
+color:var(--muted);
+text-decoration:none;
+font-size:13px;
+font-weight:600;
+transition:.3s;
+
+}
+
+
+.nav-links a:hover{
+
+color:white;
+
+}
+
+
 
 /* HERO */
-.hero{ padding:160px 8% 60px; text-align:center; }
-.hero h1{ font-size:44px; line-height:1.1; max-width:800px; margin:0 auto; color:white; font-weight:700; }
-.hero p{ margin-top:14px; color:var(--muted); max-width:650px; margin:0 auto; }
 
-/* DISCLAIMERS */
-.disclaimers { display: flex; justify-content: center; gap: 15px; margin-top: 30px; flex-wrap: wrap; }
-.disc-item { padding: 8px 16px; border: 1px solid var(--a); border-radius: 8px; font-size: 11px; color: var(--a); background: rgba(99, 102, 241, 0.05); }
 
-.btn{ margin-top:22px; display:inline-block; padding:11px 18px; border-radius:10px; background:var(--a); color:white; text-decoration:none; font-weight:500; }
+.hero{
 
-/* SECTIONS */
-.section{ padding:70px 8%; }
-.title{ text-align:center; font-size:22px; margin-bottom:22px; }
+padding:170px 8% 80px;
+text-align:center;
 
-.grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px; }
-.card{ background:var(--card); border:1px solid var(--stroke); padding:22px; border-radius:16px; transition:.35s ease; }
-.card:hover{ transform:translateY(-6px); border-color:var(--a); }
+}
+
+
+.hero h1{
+
+font-size:48px;
+line-height:1.1;
+max-width:850px;
+margin:auto;
+font-weight:800;
+
+}
+
+
+.hero p{
+
+max-width:650px;
+margin:20px auto 0;
+color:var(--muted);
+font-size:16px;
+line-height:1.6;
+
+}
+
+
+
+.btn{
+
+margin-top:30px;
+display:inline-block;
+
+padding:13px 25px;
+
+border-radius:12px;
+
+background:var(--a);
+
+color:white;
+
+text-decoration:none;
+
+font-weight:600;
+
+transition:.3s;
+
+}
+
+
+.btn:hover{
+
+transform:translateY(-3px);
+
+box-shadow:0 10px 30px rgba(99,102,241,.35);
+
+}
+
+
+
+/* BADGES */
+
+
+.disclaimers{
+
+display:flex;
+justify-content:center;
+gap:12px;
+flex-wrap:wrap;
+margin-top:30px;
+
+}
+
+
+.disc-item{
+
+padding:8px 15px;
+
+border:1px solid var(--a);
+
+border-radius:20px;
+
+font-size:12px;
+
+color:#a5b4fc;
+
+background:rgba(99,102,241,.08);
+
+}
+
+
+
+/* SECTION */
+
+
+.section{
+
+padding:90px 8%;
+
+}
+
+
+.title{
+
+text-align:center;
+font-size:28px;
+font-weight:700;
+margin-bottom:40px;
+
+}
+
+
+
+.grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+gap:20px;
+
+}
+
+
+
+.card{
+
+background:var(--card);
+
+border:1px solid var(--stroke);
+
+padding:25px;
+
+border-radius:20px;
+
+transition:.35s;
+
+}
+
+
+
+.card:hover{
+
+transform:translateY(-8px);
+
+border-color:var(--a);
+
+}
+
+
+
+.card h3{
+
+font-size:20px;
+margin-bottom:12px;
+
+}
+
+
+
+.card p{
+
+color:var(--muted);
+line-height:1.6;
+font-size:14px;
+
+}
+  /* SERVICES */
+
+.service-icon{
+
+font-size:28px;
+margin-bottom:15px;
+
+}
+
+
+
+/* PORTFOLIO */
+
+.project-card{
+
+position:relative;
+overflow:hidden;
+
+}
+
+
+.project-card .tag{
+
+display:inline-block;
+
+margin:8px 0 15px;
+
+padding:5px 12px;
+
+border-radius:20px;
+
+font-size:11px;
+
+color:#a5b4fc;
+
+background:rgba(99,102,241,.12);
+
+}
+
+
+.tech{
+
+margin-top:15px;
+
+font-size:12px;
+
+color:rgba(255,255,255,.45);
+
+}
+
+
+.project-card a{
+
+display:inline-block;
+
+margin-top:20px;
+
+color:#a5b4fc;
+
+text-decoration:none;
+
+font-weight:600;
+
+font-size:14px;
+
+}
+
+
+
+/* WHY SECTION */
+
+
+.why-card{
+
+text-align:center;
+
+}
+
+
+.why-card h3{
+
+margin-bottom:12px;
+
+}
+
+
 
 /* CTA */
-.cta{ text-align:center; padding:80px 8%; background:rgba(255,255,255,0.03); border-top:1px solid var(--stroke); }
-form{ max-width:450px; margin:20px auto 0; display:flex; flex-direction:column; gap:10px; }
-input,textarea{ padding:10px; border-radius:10px; border:1px solid rgba(255,255,255,0.1); background:rgba(255,255,255,0.03); color:white; width:100%; }
-textarea{ height:90px; }
 
-footer{ text-align:center; padding:25px; font-size:12px; color:rgba(255,255,255,0.5); }
+
+.cta{
+
+text-align:center;
+
+padding:90px 8%;
+
+background:rgba(255,255,255,.03);
+
+border-top:1px solid var(--stroke);
+
+}
+
+
+.cta h2{
+
+font-size:30px;
+
+margin-bottom:12px;
+
+}
+
+
+.cta p{
+
+color:var(--muted);
+
+}
+
+
+
+form{
+
+max-width:450px;
+
+margin:30px auto 0;
+
+display:flex;
+
+flex-direction:column;
+
+gap:12px;
+
+}
+
+
+
+input, textarea{
+
+padding:13px;
+
+border-radius:12px;
+
+border:1px solid var(--stroke);
+
+background:rgba(255,255,255,.03);
+
+color:white;
+
+}
+
+
+textarea{
+
+height:100px;
+
+}
+
+
+
+footer{
+
+text-align:center;
+
+padding:30px;
+
+color:rgba(255,255,255,.45);
+
+font-size:13px;
+
+}
+
+
+
+/* MOBILE */
+
+
+@media(max-width:700px){
+
+nav{
+
+padding:15px 5%;
+
+}
+
+
+.nav-links{
+
+gap:14px;
+
+}
+
+
+.nav-links a{
+
+font-size:11px;
+
+}
+
+
+.hero{
+
+padding:140px 6% 60px;
+
+}
+
+
+.hero h1{
+
+font-size:34px;
+
+}
+
+
+.section{
+
+padding:70px 6%;
+
+}
+
+
+.title{
+
+font-size:24px;
+
+}
+
+}
+
 </style>
+
 </head>
+
 
 <body>
 
+
 <nav>
-  <a class="logo" href="#"><img src="logo.svg" alt="NEXORA"></a>
-  <div class="nav-links">
-    <a href="#servizi">Servizi</a>
-    <a href="#lavori">Lavori</a>
-    <a href="#contatto">Contatto</a>
-  </div>
+
+<a class="logo" href="#">
+
+<img src="logo.svg" alt="NEXORA Studio">
+
+</a>
+
+
+<div class="nav-links">
+
+<a href="#servizi">Servizi</a>
+
+<a href="#portfolio">Portfolio</a>
+
+<a href="#contatto">Contatto</a>
+
+</div>
+
 </nav>
 
-<section class="hero">
-  <h1>Costruiamo esperienze digitali che aiutano aziende e professionisti a crescere online.</h1>
-  <p>Siti web, landing page e sistemi digitali progettati per comunicare meglio, generare opportunità e valorizzare il tuo brand.</p>
-  
-  <div class="disclaimers">
-    <div class="disc-item">Performance Ottimizzata</div>
-    <div class="disc-item">Mobile Responsive</div>
-    <div class="disc-item">Focus Conversioni</div>
-  </div>
 
-  <a class="btn" href="#contatto">Richiedi una consulenza</a>
+
+<section class="hero">
+
+
+<h1>
+
+Creiamo esperienze digitali che trasformano idee e attività in brand online professionali.
+
+</h1>
+
+
+<p>
+
+Siti web, landing page e soluzioni digitali progettate per comunicare valore, migliorare la presenza online e generare nuove opportunità.
+
+</p>
+
+
+
+<div class="disclaimers">
+
+<div class="disc-item">Performance Ottimizzata</div>
+
+<div class="disc-item">Mobile Responsive</div>
+
+<div class="disc-item">Design Professionale</div>
+
+</div>
+
+
+<a href="#contatto" class="btn">
+
+Parliamo del tuo progetto
+
+</a>
+
+
 </section>
+
+
+
 
 <section id="servizi" class="section">
-  <div class="title">Servizi</div>
-  <div class="grid">
-    <div class="card"><h3>Siti Web</h3><p>Moderni e ottimizzati per conversioni.</p></div>
-    <div class="card"><h3>Landing Page</h3><p>Progettate per acquisire clienti.</p></div>
-    <div class="card"><h3>Automazioni AI</h3><p>Semplificazione dei processi digitali.</p></div>
-  </div>
+
+
+<div class="title">
+
+Servizi
+
+</div>
+
+
+<div class="grid">
+
+
+<div class="card">
+
+<h3>Siti Web</h3>
+
+<p>
+Realizziamo siti moderni, veloci e ottimizzati per rappresentare al meglio la tua attività.
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>Landing Page</h3>
+
+<p>
+Pagine progettate per presentare servizi, prodotti e trasformare visite in contatti.
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>AI Solutions</h3>
+
+<p>
+Integrazione di strumenti digitali e automazioni per rendere i processi più efficienti.
+</p>
+
+</div>
+
+
+</div>
+
+
 </section>
 
-<section id="lavori" class="section">
-  <div class="title">Lavori</div>
-  <div class="grid" style="justify-content: center;">
-    <div class="card" style="max-width: 400px;">
-      <h3>GV Solutions</h3>
-      <p style="margin: 10px 0; color: var(--muted);">Portfolio web professionale orientato alle performance. Un'interfaccia moderna e pulita.</p>
-      <a href="https://giupe-lab.github.io" target="_blank" style="color:var(--a);text-decoration:none;font-weight:600;margin-top:10px;display:block;">Visita il sito &rarr;</a>
-    </div>
-  </div>
+
+
+
+<section id="portfolio" class="section">
+
+
+<div class="title">
+
+Featured Projects
+
+</div>
+
+
+<div class="grid">
+
+
+
+<div class="card project-card">
+
+
+<h3>
+
+GV Solutions
+
+</h3>
+
+
+<div class="tag">
+
+Business Website
+
+</div>
+
+
+<p>
+
+Sito web professionale realizzato per un'azienda di noleggio a lungo termine. Un progetto sviluppato con attenzione a design, chiarezza dei servizi e acquisizione contatti.
+
+</p>
+
+
+<div class="tech">
+
+HTML • CSS • JavaScript • Responsive Design
+
+</div>
+
+
+<a href="https://giupe-lab.github.io" target="_blank">
+
+View Project →
+
+</a>
+
+
+</div>
+
+
+
+
+
+<div class="card project-card">
+
+
+<h3>
+
+NEXORA Studio
+
+</h3>
+
+
+<div class="tag">
+
+Digital Agency Website
+
+</div>
+
+
+<p>
+
+Sito ufficiale dello studio digitale, progettato per presentare servizi web, soluzioni AI e sviluppo di esperienze online moderne.
+
+</p>
+
+
+<div class="tech">
+
+Frontend Development • UI Design
+
+</div>
+
+
+<a href="#">
+
+View Project →
+
+</a>
+
+
+</div>
+<div class="card project-card">
+
+<h3>
+TaskFlow AI
+</h3>
+
+<div class="tag">
+SaaS Landing Page
+</div>
+
+<p>
+Landing page moderna progettata per un prodotto digitale, con focus su esperienza utente, comunicazione del valore e conversione.
+</p>
+
+<div class="tech">
+UI Design • Frontend Development • AI Concept
+</div>
+
+<a href="#">
+View Project →
+</a>
+
+</div>
+
+
+
+
+<div class="card project-card">
+
+<h3>
+VelvetSkin
+</h3>
+
+<div class="tag">
+E-commerce Concept
+</div>
+
+<p>
+Progetto digitale dedicato al settore beauty, sviluppato con attenzione al design, alla presentazione dei prodotti e all'esperienza cliente.
+</p>
+
+<div class="tech">
+E-commerce • UX Design • Responsive
+</div>
+
+<a href="#">
+View Project →
+</a>
+
+</div>
+
+
+
+
+<div class="card project-card">
+
+<h3>
+Rinaldi Coaching
+</h3>
+
+<div class="tag">
+Personal Brand Website
+</div>
+
+<p>
+Landing page pensata per valorizzare un professionista, comunicare autorevolezza e creare un punto di riferimento online.
+</p>
+
+<div class="tech">
+Landing Page • Web Design
+</div>
+
+<a href="#">
+View Project →
+</a>
+
+</div>
+
+
+</div>
+
 </section>
+
+
+
+
+
+<section class="section">
+
+
+<div class="title">
+Why NEXORA
+</div>
+
+
+<div class="grid">
+
+
+<div class="card why-card">
+
+<h3>
+Design Moderno
+</h3>
+
+<p>
+Interfacce curate per comunicare professionalità e creare una presenza digitale forte.
+</p>
+
+</div>
+
+
+
+<div class="card why-card">
+
+<h3>
+Focus Business
+</h3>
+
+<p>
+Ogni progetto viene sviluppato pensando agli obiettivi dell'attività e agli utenti finali.
+</p>
+
+</div>
+
+
+
+<div class="card why-card">
+
+<h3>
+Tecnologia & Innovazione
+</h3>
+
+<p>
+Utilizziamo strumenti moderni e soluzioni AI per creare esperienze digitali efficienti.
+</p>
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
 
 <section id="contatto" class="cta">
-  <h2>Parliamo del tuo progetto</h2>
-  <p>Ti rispondiamo entro 24 ore.</p>
-  <form action="https://formspree.io/f/xnjybgwk" method="POST">
-    <input type="text" name="name" placeholder="Nome" required>
-    <input type="email" name="email" placeholder="Email" required>
-    <textarea name="message" placeholder="Di cosa hai bisogno?" required></textarea>
-    <button class="btn" type="submit" style="border:none; cursor:pointer;">Invia richiesta</button>
-  </form>
+
+
+<h2>
+Parliamo del tuo progetto
+</h2>
+
+
+<p>
+Raccontaci la tua idea e valutiamo insieme la soluzione più adatta.
+</p>
+
+
+
+<form action="https://formspree.io/f/xnjybgwk" method="POST">
+
+
+<input 
+type="text" 
+name="name" 
+placeholder="Nome" 
+required>
+
+
+<input 
+type="email" 
+name="email" 
+placeholder="Email" 
+required>
+
+
+<textarea 
+name="message" 
+placeholder="Descrivi il tuo progetto"
+required></textarea>
+
+
+<button 
+class="btn" 
+type="submit"
+style="border:none;cursor:pointer;">
+
+Invia richiesta
+
+</button>
+
+
+</form>
+
+
 </section>
 
+
+
+
+
 <footer>
-  <p>💻 NEXORA Studio | 📩 nexoradigi.studio@gmail.com</p>
-  <p>© 2026 NEXORA Studio</p>
+
+<p>
+💻 NEXORA Studio | 📩 nexoradigi.studio@gmail.com
+</p>
+
+<p>
+© 2026 NEXORA Studio
+</p>
+
 </footer>
 
+
+
 </body>
+
 </html>
